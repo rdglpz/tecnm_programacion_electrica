@@ -125,7 +125,10 @@ Aplicar la fórmula: $$F = 9/5 * C + 35$$
 
 ## 4.2.1 Control Selectivo **Si** 
 
-El control selectivo 
+El control selectivo Si-FinSi
+
+Puede o no cumplirse una condición para ejecutar una alternativa.
+
 ```
 Si <condición> Entonces  
   [Bloque de secuencia de instrucciones];
@@ -136,7 +139,9 @@ Ejecuta el bloque de secuencia de instrucciones solo si la condición se cumple,
 
 ## 4.2.2 Control Selectivo **Si/Sino** 
 
-El control selectivo 
+El control selectivo excluyente de dos alternativas  Si-SiNo-FinSi.
+
+Se cumple **una** alternativa de las dos. 
 ```
 Si <condición> Entonces  
   [Bloque de secuencia de instrucciones A];
@@ -153,7 +158,7 @@ Si la condición se cumple entonces se ejecuta el Bloque de secuencia de instruc
 
 ## 4.2.3 Control Selectivo **Si/Sino** 
 
-El control selectivo 
+El control selectivo excluyente de mas de dos alternativas. Solo se cumple una de las $n$ alternativas.
 ```
 Si <condición> Entonces  
     [Bloque de secuencia de instrucciones A];
@@ -168,6 +173,10 @@ Esta forma del sí representa una bifurcación en la ejecución del programa.
 Si la condición se cumple entonces se ejecuta el Bloque de secuencia de instrucciones A, Si no se ejecuta el Bloque de secuencia de instrucciones B.
 
 ## 4.2.4 Control selectivo de casos.
+
+El control selectivo incluyente de mas de un alternativas. 
+
+Se puede cumplir 0 o mas alternativas.
 
 ```
 \\Caso 1
@@ -186,6 +195,40 @@ Si <condición> Entonces
 FinSi
 
 ```
+
+
+## 4.2.5 Control Selectivo Anidado {.smaller}
+
+El control selectivo se puede anidar. 
+```
+Si <condicion1> Entonces  
+
+    //Opción 1
+    [Bloque de secuencia de instrucciones A];
+
+    Si <condición2> Entonces  
+      //Opcion 2
+      [Bloque de secuencia de instrucciones B];
+
+        Si <condición3> Entonces  
+            //Opción 3
+            [Bloque de secuencia de instrucciones C];
+
+            Si <condición4> Entonces  
+                //opcion 4
+                [Bloque de secuencia de instrucciones D];
+
+              //Opcion 5
+              [Bloque de secuencia de instrucciones E];
+            FinSi
+
+        FinSi
+
+    FinSi
+    
+FinSi
+```
+
 ## 4.2.5 Control selectivo de casos Ejercicios. {.smaller}
 **Instrucciones**. 
 
@@ -206,38 +249,9 @@ Escribe un programa que pida al usuario 2 números enteros positivos y los muest
 - Salida: `8, 15`  
 
 
-## 4.2.5 Control Selectivo Anidado(**Si/If**) {.smaller}
 
-El control selectivo se puede anidar. 
-```
-Si <condicion1> Entonces  
 
-    //Opción 1
-    [Bloque de secuencia de instrucciones A];
-SiNo
 
-    Si <condición2> Entonces  
-      //Opcion 2
-      [Bloque de secuencia de instrucciones B];
-    SiNo
-
-        Si <condición3> Entonces  
-            //Opción 3
-            [Bloque de secuencia de instrucciones C];
-        SiNo
-
-            Si <condición4> Entonces  
-                //opcion 4
-                [Bloque de secuencia de instrucciones D];
-            SiNo
-
-              //Opcion 5
-              [Bloque de secuencia de instrucciones E];
-            FinSi
-        FinSi
-    FinSi
-FinSi
-```
 
 
 
@@ -447,3 +461,40 @@ Indicar, si es primo y si tiene un primo gemelo
 Ingresa un número entero positivo mayor que 1.  
 - Entrada: `13`  
 - Salida: `"13 es primo y el 15 no es primo por lo que no son números primos positivos"` 
+
+
+## 
+
+
+## Apendice 4.2.5 Control Selectivo Anidado(**Si/If**) {.smaller}
+
+El control selectivo se puede anidar. 
+```
+Si <condicion1> Entonces  
+
+    //Opción 1
+    [Bloque de secuencia de instrucciones A];
+SiNo
+
+    Si <condición2> Entonces  
+      //Opcion 2
+      [Bloque de secuencia de instrucciones B];
+    SiNo
+
+        Si <condición3> Entonces  
+            //Opción 3
+            [Bloque de secuencia de instrucciones C];
+        SiNo
+
+            Si <condición4> Entonces  
+                //opcion 4
+                [Bloque de secuencia de instrucciones D];
+            SiNo
+
+              //Opcion 5
+              [Bloque de secuencia de instrucciones E];
+            FinSi
+        FinSi
+    FinSi
+FinSi
+```

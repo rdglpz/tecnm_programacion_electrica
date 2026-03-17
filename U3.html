@@ -231,7 +231,8 @@ finAlgoritmo</code></pre>
 </section>
 <section id="control-selectivo-si" class="slide level2">
 <h2>4.2.1 Control Selectivo <strong>Si</strong></h2>
-<p>El control selectivo</p>
+<p>El control selectivo Si-FinSi</p>
+<p>Puede o no cumplirse una condición para ejecutar una alternativa.</p>
 <pre><code>Si &lt;condición&gt; Entonces  
   [Bloque de secuencia de instrucciones];
 FinSi</code></pre>
@@ -239,7 +240,8 @@ FinSi</code></pre>
 </section>
 <section id="control-selectivo-sisino" class="slide level2">
 <h2>4.2.2 Control Selectivo <strong>Si/Sino</strong></h2>
-<p>El control selectivo</p>
+<p>El control selectivo excluyente de dos alternativas Si-SiNo-FinSi.</p>
+<p>Se cumple <strong>una</strong> alternativa de las dos.</p>
 <pre><code>Si &lt;condición&gt; Entonces  
   [Bloque de secuencia de instrucciones A];
 SiNo
@@ -250,7 +252,7 @@ FinSi</code></pre>
 </section>
 <section id="control-selectivo-sisino-1" class="slide level2">
 <h2>4.2.3 Control Selectivo <strong>Si/Sino</strong></h2>
-<p>El control selectivo</p>
+<p>El control selectivo excluyente de mas de dos alternativas. Solo se cumple una de las <span class="math inline">\(n\)</span> alternativas.</p>
 <pre><code>Si &lt;condición&gt; Entonces  
     [Bloque de secuencia de instrucciones A];
 SiNo Si&lt;condicion&gt;
@@ -263,6 +265,8 @@ FinSi</code></pre>
 </section>
 <section id="control-selectivo-de-casos." class="slide level2">
 <h2>4.2.4 Control selectivo de casos.</h2>
+<p>El control selectivo incluyente de mas de un alternativas.</p>
+<p>Se puede cumplir 0 o mas alternativas.</p>
 <pre><code>\\Caso 1
 Si &lt;condición&gt; Entonces  
   [Bloque de secuencia de instrucciones A];
@@ -279,6 +283,33 @@ Si &lt;condición&gt; Entonces
 FinSi
 </code></pre>
 </section>
+<section id="control-selectivo-anidadosiif" class="slide level2 smaller">
+<h2>4.2.5 Control Selectivo Anidado(<strong>Si/If</strong>)</h2>
+<p>El control selectivo se puede anidar.</p>
+<pre><code>Si &lt;condicion1&gt; Entonces  
+
+    //Opción 1
+    [Bloque de secuencia de instrucciones A];
+
+    Si &lt;condición2&gt; Entonces  
+      //Opcion 2
+      [Bloque de secuencia de instrucciones B];
+
+        Si &lt;condición3&gt; Entonces  
+            //Opción 3
+            [Bloque de secuencia de instrucciones C];
+
+            Si &lt;condición4&gt; Entonces  
+                //opcion 4
+                [Bloque de secuencia de instrucciones D];
+
+              //Opcion 5
+              [Bloque de secuencia de instrucciones E];
+            FinSi
+        FinSi
+    FinSi
+FinSi</code></pre>
+</section>
 <section id="control-selectivo-de-casos-ejercicios." class="slide level2 smaller">
 <h2>4.2.5 Control selectivo de casos Ejercicios.</h2>
 <p><strong>Instrucciones</strong>.</p>
@@ -293,37 +324,6 @@ Escribe un programa que pida al usuario 2 números enteros positivos y los muest
 <p><strong>Ejemplo:</strong><br>
 - Entrada: <code>15, 8</code><br>
 - Salida: <code>8, 15</code></p>
-</section>
-<section id="control-selectivo-anidadosiif" class="slide level2 smaller">
-<h2>4.2.5 Control Selectivo Anidado(<strong>Si/If</strong>)</h2>
-<p>El control selectivo se puede anidar.</p>
-<pre><code>Si &lt;condicion1&gt; Entonces  
-
-    //Opción 1
-    [Bloque de secuencia de instrucciones A];
-SiNo
-
-    Si &lt;condición2&gt; Entonces  
-      //Opcion 2
-      [Bloque de secuencia de instrucciones B];
-    SiNo
-
-        Si &lt;condición3&gt; Entonces  
-            //Opción 3
-            [Bloque de secuencia de instrucciones C];
-        SiNo
-
-            Si &lt;condición4&gt; Entonces  
-                //opcion 4
-                [Bloque de secuencia de instrucciones D];
-            SiNo
-
-              //Opcion 5
-              [Bloque de secuencia de instrucciones E];
-            FinSi
-        FinSi
-    FinSi
-FinSi</code></pre>
 </section>
 <section id="ejercicios" class="slide level2 smaller">
 <h2>Ejercicios</h2>
@@ -450,6 +450,40 @@ Escribe un programa que pida un número entero positivo y determine si, este es 
 Ingresa un número entero positivo mayor que 1.<br>
 - Entrada: <code>13</code><br>
 - Salida: <code>"13 es primo y el 15 no es primo por lo que no son números primos positivos"</code></p>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+</section>
+<section id="apendice-4.2.5-control-selectivo-anidadosiif" class="slide level2 smaller">
+<h2>Apendice 4.2.5 Control Selectivo Anidado(<strong>Si/If</strong>)</h2>
+<p>El control selectivo se puede anidar.</p>
+<pre><code>Si &lt;condicion1&gt; Entonces  
+
+    //Opción 1
+    [Bloque de secuencia de instrucciones A];
+SiNo
+
+    Si &lt;condición2&gt; Entonces  
+      //Opcion 2
+      [Bloque de secuencia de instrucciones B];
+    SiNo
+
+        Si &lt;condición3&gt; Entonces  
+            //Opción 3
+            [Bloque de secuencia de instrucciones C];
+        SiNo
+
+            Si &lt;condición4&gt; Entonces  
+                //opcion 4
+                [Bloque de secuencia de instrucciones D];
+            SiNo
+
+              //Opcion 5
+              [Bloque de secuencia de instrucciones E];
+            FinSi
+        FinSi
+    FinSi
+FinSi</code></pre>
 
 </section></section>
     </div>

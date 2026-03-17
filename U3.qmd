@@ -125,9 +125,8 @@ Aplicar la fórmula: $$F = 9/5 * C + 35$$
 
 ## 4.2.1 Control Selectivo **Si** 
 
-El control selectivo Si-FinSi
+El control selectivo de una alternativa opcional Si-FinSi
 
-Puede o no cumplirse una condición para ejecutar una alternativa.
 
 ```
 Si <condición> Entonces  
@@ -137,11 +136,11 @@ FinSi
 
 Ejecuta el bloque de secuencia de instrucciones solo si la condición se cumple, si no la ejecución salta hasta la siguiente línea después del FinSi.
 
-## 4.2.2 Control Selectivo **Si/Sino** 
+## 4.2.2 Control Selectivo **Si-SiNo-FinSi.** 
 
-El control selectivo excluyente de dos alternativas  Si-SiNo-FinSi.
+El control selectivo excluyente de dos alternativas  
 
-Se cumple **una** alternativa de las dos. 
+Se cumple siempre solo **una** alternativa de las dos. 
 ```
 Si <condición> Entonces  
   [Bloque de secuencia de instrucciones A];
@@ -156,9 +155,9 @@ Si la condición se cumple entonces se ejecuta el Bloque de secuencia de instruc
 
 
 
-## 4.2.3 Control Selectivo **Si/Sino** 
+## 4.2.3 Control Selectivo **Si-SiNoSi-SinoSi-FinSi.** 
 
-El control selectivo excluyente de mas de dos alternativas. Solo se cumple una de las $n$ alternativas.
+El control selectivo excluyente de mas de dos alternativas. Solo se cumple a lo mas una de las $n$ alternativas.
 ```
 Si <condición> Entonces  
     [Bloque de secuencia de instrucciones A];
@@ -172,9 +171,9 @@ Esta forma del sí representa una bifurcación en la ejecución del programa.
 
 Si la condición se cumple entonces se ejecuta el Bloque de secuencia de instrucciones A, Si no se ejecuta el Bloque de secuencia de instrucciones B.
 
-## 4.2.4 Control selectivo de casos.
+## 4.2.4 Control selectivo de casos **Si-FinSi, Si-FinSi**
 
-El control selectivo incluyente de mas de un alternativas. 
+El control selectivo incluyente de mas de una alternativa. El cumplimiento de una condición no excluye a otra.
 
 Se puede cumplir 0 o mas alternativas.
 
@@ -198,6 +197,8 @@ FinSi
 
 
 ## 4.2.5 Control Selectivo Anidado {.smaller}
+
+El cumplimiento de una condicional anidada depende del cumplimiento de la condición inmediata exterior.
 
 El control selectivo se puede anidar. 
 ```
@@ -225,7 +226,7 @@ Si <condicion1> Entonces
         FinSi
 
     FinSi
-    
+
 FinSi
 ```
 
@@ -274,18 +275,11 @@ Ingrese un número entero no negativo que representa las horas trabajadas en la 
 Salida:
 
 ``Horas a $5: 40``
-
 ``Horas al doble: 10``
-
 ``Horas al cuádruple: 3``
-
 ``Pago total: $360``
 
 Implementar la estructura de control Si anidada.
-
-
-
-
 
 
 ##  Ejercicios

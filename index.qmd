@@ -28,6 +28,7 @@ format:
 * [Detalles de la asignatura](https://drive.google.com/file/d/1Szw2QInI9FrmDmlSfddGnLX77tXOv-oZ/view)
 * [Perfil de PSEINT](https://github.com/rdglpz/tecnm_programacion_electrica/blob/main/pseint_perfil_tecnmqroelectrica)   
 * [Calificaciones](https://docs.google.com/spreadsheets/d/1F2i9YQQ6lnZZewfKWzPTwuxxFNUc-CzLCBZMQ2HPuwU/edit)
+-
 
 
 # Fundamentos de Programación.

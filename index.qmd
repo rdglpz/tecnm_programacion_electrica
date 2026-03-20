@@ -16,7 +16,24 @@ format:
       text: |
         <style>
           body { counter-reset: section -1; }
+          .quarto-title-block {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+          }
+          .logo-header {
+            text-align: center;
+            margin-bottom: 1rem;
+          }
+          .logo-header img {
+            max-height: 80px;
+          }
         </style>
+    include-before-body:
+      text: |
+        <div class="logo-header">
+          <img src="https://queretaro.tecnm.mx/wp-content/uploads/2021/09/LOGOS-INSTITUCIONALES-ITQ-08.png" alt="TecNM Logo">
+        </div>
 ---
 
 

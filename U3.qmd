@@ -12,6 +12,12 @@ format:
         center-title-slide: true
         incremental: false
         highlight-style: github
+        include-in-header:
+          text: |
+            <style>
+              .kw  { color: #0066cc; font-weight: bold; }
+              .var { color: #cc0000; }
+            </style>
 config:
   flowchart:
     htmlLabels: false
@@ -21,6 +27,9 @@ editor:
   syncslides: false
 
 filters: [pseudocode]
+
+
+
 ---
 
 
@@ -37,10 +46,11 @@ Profesor: Dr. Rodrigo López Farías
 
 1. Secuencial
 2. Seleccion
-    1.1 si (if)  
-    1.2 si, sino (if - else)  
-    1.3 si, sino si (if - elseif)  
-    1.4 casos (Switch - case)    
+    1 Si-FinSi (if)  
+    2 Si-SiNo-FinSi, (if - elif)  
+    3 Si, SiNo si - Sino Si FinSi(if - elseif)  
+    4 Si-FinSi , Si-FinSi, Si-FinSi (casos (Switch - case)    )
+    5 Si-FinSi anidados.
 
 3. Ciclo (while)
 
@@ -123,15 +133,16 @@ Aplicar la fórmula: $$F = 9/5 * C + 35$$
 * Escriba un programa en pseudocódigo que solicite al usuario 2 números enteros en variables a y b, e intercambie sus valores. Esto es, asignar a b el valor de a y viceversa.   
 
 
-## 4.2.1 Control Selectivo **Si** 
+## 4.2.1 Control Selectivo **Si-FinSi** 
 
 El control selectivo de una alternativa opcional Si-FinSi
 
 
-```
-Si <condición> Entonces  
+```{=html}
+<pre><code><span style="color:#0066cc; font-weight:bold;">Si</span> <span style="color:#cc0000;">&lt;condición&gt;</span> <span style="color:#0066cc; font-weight:bold;">Entonces</span>
   [Bloque de secuencia de instrucciones];
-FinSi
+<span style="color:#0066cc; font-weight:bold;">FinSi</span>
+</code></pre>
 ```
 
 Ejecuta el bloque de secuencia de instrucciones solo si la condición se cumple, si no la ejecución salta hasta la siguiente línea después del FinSi.
@@ -141,12 +152,14 @@ Ejecuta el bloque de secuencia de instrucciones solo si la condición se cumple,
 El control selectivo excluyente de dos alternativas  
 
 Se cumple siempre solo **una** alternativa de las dos. 
-```
-Si <condición> Entonces  
+
+```{=html}
+<pre><code><span style="color:#0066cc; font-weight:bold;">Si</span> <span style="color:#cc0000;">&lt;condición&gt;</span> <span style="color:#0066cc; font-weight:bold;">Entonces</span>
   [Bloque de secuencia de instrucciones A];
-SiNo
+<span style="color:#0066cc; font-weight:bold;">SiNo</span>
   [Bloque de secuencia de instrucciones B];
-FinSi
+<span style="color:#0066cc; font-weight:bold;">FinSi</span>
+</code></pre>
 ```
 Esta forma del sí representa una bifurcación en la ejecución del programa.
 
@@ -155,44 +168,41 @@ Si la condición se cumple entonces se ejecuta el Bloque de secuencia de instruc
 
 
 
-## 4.2.3 Control Selectivo **Si-SiNoSi-SinoSi-FinSi.** 
+## 4.2.3 Control Selectivo **Si-SiNoSi-FinSi.** 
 
-El control selectivo excluyente de mas de dos alternativas. Solo se cumple a lo mas una de las $n$ alternativas.
-```
-Si <condición> Entonces  
+El control selectivo excluyente. En este ejemplo solo se cumple a lo mas una de las 2 alternativas.
+```{=html}
+<pre><code><span style="color:#0066cc; font-weight:bold;">Si</span> <span style="color:#cc0000;">&lt;condición&gt;</span> <span style="color:#0066cc; font-weight:bold;">Entonces</span>
     [Bloque de secuencia de instrucciones A];
-SiNo Si<condicion>
+<span style="color:#0066cc; font-weight:bold;">SiNo Si</span> <span style="color:#cc0000;">&lt;condición&gt;</span>
     [Bloque de secuencia de instrucciones B];
-SiNo Si<condicion>
-    [Bloque de secuencia de instrucciones C];
-FinSi
+<span style="color:#0066cc; font-weight:bold;">FinSi</span>
+</code></pre>
 ```
-Esta forma del sí representa una bifurcación en la ejecución del programa.
 
-Si la condición se cumple entonces se ejecuta el Bloque de secuencia de instrucciones A, Si no se ejecuta el Bloque de secuencia de instrucciones B.
 
-## 4.2.4 Control selectivo de casos **Si-FinSi, Si-FinSi**
+## 4.2.4 Control selectivo de casos con **Si-FinSi**
 
 El control selectivo incluyente de mas de una alternativa. El cumplimiento de una condición no excluye a otra.
 
 Se puede cumplir 0 o mas alternativas.
 
-```
-\\Caso 1
-Si <condición> Entonces  
+```{=html}
+<pre><code><span style="color:#888;">\\ Caso 1</span>
+<span style="color:#0066cc; font-weight:bold;">Si</span> <span style="color:#cc0000;">&lt;condición&gt;</span> <span style="color:#0066cc; font-weight:bold;">Entonces</span>
   [Bloque de secuencia de instrucciones A];
-FinSi
+<span style="color:#0066cc; font-weight:bold;">FinSi</span>
 
-\\Caso 2
-Si <condición> Entonces  
+<span style="color:#888;">\\ Caso 2</span>
+<span style="color:#0066cc; font-weight:bold;">Si</span> <span style="color:#cc0000;">&lt;condición&gt;</span> <span style="color:#0066cc; font-weight:bold;">Entonces</span>
   [Bloque de secuencia de instrucciones B];
-FinSi
+<span style="color:#0066cc; font-weight:bold;">FinSi</span>
 
-\\Caso 3
-Si <condición> Entonces  
+<span style="color:#888;">\\ Caso 3</span>
+<span style="color:#0066cc; font-weight:bold;">Si</span> <span style="color:#cc0000;">&lt;condición&gt;</span> <span style="color:#0066cc; font-weight:bold;">Entonces</span>
   [Bloque de secuencia de instrucciones C];
-FinSi
-
+<span style="color:#0066cc; font-weight:bold;">FinSi</span>
+</code></pre>
 ```
 
 
@@ -201,33 +211,33 @@ FinSi
 El cumplimiento de una condicional anidada depende del cumplimiento de la condición inmediata exterior.
 
 El control selectivo se puede anidar. 
-```
-Si <condicion1> Entonces  
+```{=html}
+<pre><code><span style="color:#0066cc; font-weight:bold;">Si</span> <span style="color:#cc0000;">&lt;condicion1&gt;</span> <span style="color:#0066cc; font-weight:bold;">Entonces</span>
 
-    //Opción 1
+    <span style="color:#888;">//Opción 1</span>
     [Bloque de secuencia de instrucciones A];
+    <span style="color:#0066cc; font-weight:bold;">Si</span> <span style="color:#cc0000;">&lt;condición2&gt;</span> <span style="color:#0066cc; font-weight:bold;">Entonces</span>
 
-    Si <condición2> Entonces  
-      //Opcion 2
+      <span style="color:#888;">//Opcion 2</span>
       [Bloque de secuencia de instrucciones B];
+        <span style="color:#0066cc; font-weight:bold;">Si</span> <span style="color:#cc0000;">&lt;condición3&gt;</span> <span style="color:#0066cc; font-weight:bold;">Entonces</span>
 
-        Si <condición3> Entonces  
-            //Opción 3
+            <span style="color:#888;">//Opción 3</span>
             [Bloque de secuencia de instrucciones C];
 
-            Si <condición4> Entonces  
-                //opcion 4
+            <span style="color:#0066cc; font-weight:bold;">Si</span> <span style="color:#cc0000;">&lt;condición4&gt;</span> <span style="color:#0066cc; font-weight:bold;">Entonces</span>
+
+                <span style="color:#888;">//Opcion 4</span>
                 [Bloque de secuencia de instrucciones D];
 
-              //Opcion 5
-              [Bloque de secuencia de instrucciones E];
-            FinSi
+            <span style="color:#0066cc; font-weight:bold;">FinSi</span></span>
 
-        FinSi
+        <span style="color:#0066cc; font-weight:bold;">FinSi</span>
 
-    FinSi
+    <span style="color:#0066cc; font-weight:bold;">FinSi</span>
 
-FinSi
+<span style="color:#0066cc; font-weight:bold;">FinSi</span>
+</code></pre>
 ```
 
 ## 4.2.5 Control selectivo de casos Ejercicios. {.smaller}
@@ -248,11 +258,6 @@ Escribe un programa que pida al usuario 2 números enteros positivos y los muest
 **Ejemplo:**  
 - Entrada: `15, 8`  
 - Salida: `8, 15`  
-
-
-
-
-
 
 
 

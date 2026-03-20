@@ -19,12 +19,15 @@ format:
         </style>
 ---
 
+
+
 # Presentación de la Clase
 
    
 * [Diapositivas](https://drive.google.com/file/d/1qA2Dy2kVQ2VCH_4RZ5Htpi84i7pKZv-j/view)
 * [Detalles de la asignatura](https://drive.google.com/file/d/1Szw2QInI9FrmDmlSfddGnLX77tXOv-oZ/view)
-* [Perfil de PSEINT](https://github.com/rdglpz/tecnm_programacion_electrica/blob/main/pseint_perfil_tecnmqroelectrica)
+* [Perfil de PSEINT](https://github.com/rdglpz/tecnm_programacion_electrica/blob/main/pseint_perfil_tecnmqroelectrica)   
+* [Calificaciones](https://docs.google.com/spreadsheets/d/1F2i9YQQ6lnZZewfKWzPTwuxxFNUc-CzLCBZMQ2HPuwU/edit)
 
 
 # Fundamentos de Programación.

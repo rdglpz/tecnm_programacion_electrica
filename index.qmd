@@ -45,7 +45,6 @@ format:
 * [Detalles de la asignatura](https://drive.google.com/file/d/1Szw2QInI9FrmDmlSfddGnLX77tXOv-oZ/view)
 * [Perfil de PSEINT](https://github.com/rdglpz/tecnm_programacion_electrica/blob/main/pseint_perfil_tecnmqroelectrica)   
 * [Calificaciones](https://docs.google.com/spreadsheets/d/1F2i9YQQ6lnZZewfKWzPTwuxxFNUc-CzLCBZMQ2HPuwU/edit)
--
 
 
 # Fundamentos de Programación.
@@ -104,3 +103,23 @@ El valor actual de la variable 'a' es: 12
 El valor actual de la variable 'b' es: 30
 ```
 
+**Parcial 2 - Tarea 3:**
+
+**Ordenamiento de 3 números (Programa fundametnal) Entregar el 24 de Marzo**
+
+ 
+Escribe un programa en PSeInt que pida al usuario 3 números enteros positivos, ordénalos en forma ascendente usando solo estructuras básicas `si/if` y comparando 1 par de números por cada condición.  
+
+Resolver con **Si** anidados y condiciones que solo comparen un par de valores. No usar and (&&) o or (||),
+
+No es necesario hacer reasignación de variables.
+
+**Entradas:**  
+- Tres enteros positivos.  
+
+**Salidas:**  
+- Los tres números en orden ascendente.  
+
+**Ejemplo:**  
+- Entrada: `12, 4, 7`  
+- Salida: `4, 7, 12` 

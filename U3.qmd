@@ -305,7 +305,7 @@ Resolver con si anidados y condiciones que solo comparen un par de valores. No u
 - Entrada: `14, 9, 20`  
 - Salida: `"El menor es 9"`  
 
-## Ejercicios
+## Ejercicios{.smaller}
 Ordenamiento de 3 números
 **Descripción:**  
 Tarea: Escribe un programa que pide al usuario 3 números enteros positivos, ordénalos en forma ascendente usando solo estructuras básicas `si/if` y comparando 1 par de valores por cada condición.  

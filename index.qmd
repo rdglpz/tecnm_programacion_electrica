@@ -60,6 +60,11 @@ format:
 # Estructuras de Control
 * [Diapositivas U3](https://rdglpz.github.io/tecnm_programacion_electrica/U3.html#/title-slide)
 
+**Introducción al Lenguaje C**
+
+* [Diapositivas de introducción al lenguaje C](U_introC.html)
+
+
 # Arreglos
 
 # Funciones

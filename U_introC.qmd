@@ -1,0 +1,702 @@
+---
+title: "TECNM QRO Programación Ing. Eléctrica 2026 Parte 4"
+author: "Rodrigo López Farías"
+format: 
+    revealjs:
+        chalkboard: true
+        mermaid:
+          theme: forest
+        theme: white
+        slide-number: true
+        fig-align: center
+        show-slide-number: print
+        center-title-slide: true
+        incremental: false
+        highlight-style: github
+        include-in-header:
+          text: |
+            <style>
+              .kw  { color: #0066cc; font-weight: bold; }
+              .var { color: #cc0000; }
+            </style>
+config:
+  flowchart:
+    htmlLabels: false
+  Reveal.initialize({ slideNumber: true });
+
+editor:
+  syncslides: false
+
+filters: [pseudocode]
+
+
+
+---
+
+
+
+
+# Programación {.smaller}
+
+Ing. Eléctrica.  
+Instituto Tecnológico de Querétaro   
+Profesor: Dr. Rodrigo López Farías
+
+## Introducción al Lenguaje C {.smaller} 
+
+
+
+- El **Lenguaje C** es un lenguje compilado desarrollado por **Dennis Ritchie** en los **Laboratorios Bell**.  
+- **1972**: Se implementó por primera vez en una computadora **PDP-11**.  
+- Se utilizó como lenguaje principal para el desarrollo del **sistema operativo UNIX**.  
+- El objetivo de **C** es que sea **independiente del hardware** y **portable**,para que un mismo código pueda compilarse y ejecutarse en distintas plataformas y arquitecturas (Linux, Windows, Android, microprocesadores diversos).  
+- Es un lenguaje modular. Cada módulo de software esta escrito en una **función**.
+- C "estandard" se compone de dos partes: El lenguaje mismo con un conjunto de funciones y la Biblioteca Estandard que contiene otro conjunto de funciones opcionales. 
+
+
+## Estándares del Lenguaje C (1/3){.smaller}
+
+
+- **1978**: **“C tradicional”** o **K&R C**, Presentado en *The C Programming Language* de Brian Kernighan y Dennis Ritchie.  
+
+-[Posteriormente, aparecieron muchas variantes del lenguaje, generando la necesidad de unificar criterios.]  
+
+- **1989**: Se publica el estándar **ANSI C** (también conocido como **C89**). Poco después, en 1990, la **ISO** lo adopta como **ISO C90**, la primera norma internacional del lenguaje.  
+
+- **1999**: Aparece el estándar **C99**, que introduce varias mejoras como:  
+  - Comentarios más cómodos de una sola línea con `//`.  
+  - Tipo lógico `_Bool` (y `<stdbool.h>`).  
+  - Declaración de variables en cualquier punto del código.  
+  - Nuevos tipos enteros fijos en `<stdint.h>`.  
+  - Arreglos de longitud variable (VLAs).  
+
+## Estándares del Lenguaje C (2/3){.smaller}
+- **2011**: Se publica el estándard **C11** (*ISO/IEC 9899:2011*).  Esta es la última versión con cambios importantes en funciones básicas.
+  - Novedades:  
+    - Se elimina la función `gets()`.  
+  - Novedades avanzadas 
+    - `_Static_assert` (aserciones en compilación).  
+    - `_Generic` (selección genérica de tipos).  
+    - `_Atomic` y `<stdatomic.h>`.  
+    - `_Alignas`, `_Alignof` y `<stdalign.h>`.  
+    - `_Noreturn`.  
+    - `_Thread_local` y `<threads.h>` (opcional).  
+    - Trigráfos eliminados.  
+
+- **2017 / 2018**: Publicación de **C17** (*ISO/IEC 9899:2018*, también conocido como **C18**).  
+  - Revisión menor del C11.  
+  - Corrige defectos y ambigüedades sin añadir grandes cambios.  
+
+
+
+## Estándares del Lenguaje C (3/3){.smaller}
+
+- **2023 / 2024**: Publicación de **C23** (*ISO/IEC 9899:2024*).  
+  - Novedades destacadas en funciones avanzadas:  
+    - Literal `nullptr` (como macro).  
+    - Literales de cadenas Unicode `u8`, `u16`, `u32`.  
+    - Mejoras en atributos y anotaciones (`[[...]]`).  
+    - Ampliación de funciones estándar y macros.  
+    - Mayor soporte para Unicode y portabilidad moderna.  
+
+* El compilador C se encuentra en el paquete GNU Compiler collection (GCC).
+
+* GCC tiene licencia GNU General Public License versión 3 (GPLv3). 
+
+* Qué significa?: "Permite a los usuarios copiar, distribuir y modificar el software, siempre que se mantengan bajo los mismos términos de la licencia.""
+
+Documentación a los estándares del lenguaje C en GCC. [(Link)](https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc/Standards.html#C-Language)
+
+
+
+
+## Ejemplo de un programa en C
+
+```{.c}
+#include <stdio.h>
+#define PI 3.1416
+#define CUADRADO(x) ((x) * (x))
+
+int main() {
+    /*Este programa calcula el área de un círculo*/
+    float r = 5.0;
+    float area = PI * CUADRADO(r);
+
+    /*Mostrar resultado*/
+    printf("Área del círculo: %f\n", area);
+    return 0;
+}
+```
+
+## Entorno del Lenguaje C
+
+El entorno C consiste en los siguientes componentes que forman parte del procesamiento de un programa escrito en C, desde la edición hasta su ejecución.
+
+![Ejemplo Entorno C](figuras/entorno_c2.png)
+
+
+## Entorno del Lenguaje C {.smaller}
+
+1. Editor (Escribir el programa en un editor de texto)
+2. Preprocesador. Genera una versión del programa curada y expandido intermedio manejando unas instrucciones especiales llamadas **directivas** indicadas al inicio con # y borrando comentarios.
+
+
+::::{.columns}
+:::{.column width="50%"}
+Código en C original.
+```{.c}
+#include <stdio.h>
+#define PI 3.1416
+#define CUADRADO(x) ((x) * (x))
+
+int main() {
+    float r = 5.0;
+    float area = PI * CUADRADO(r);
+
+    /* Mostrar resultado*/
+    printf("Área del círculo: %f\n", area);
+    return 0;
+}
+```
+:::
+
+:::{.column width="50%"}
+Código C preprocesado
+```{.c}
+/* Inserta contenido de stdio.h aquí */
+extern int printf(const char *format, ...);
+
+int main() {
+    float r = 5.0;
+    float area = 3.1416 * ((r) * (r));
+
+    printf("Área del círculo: %f\n", area);
+    return 0;
+}
+```  
+:::
+
+::::
+
+
+## Entorno del Lenguaje C
+
+
+
+3. Compilador. El programa intermedio se traduce a un código máquina (objeto)
+4. Enlazador. Vinculación de funciones externas al código objeto y generación de un único ejecutable.
+5. Cargador. El cargador del sistema operativo hace una copia del programa ejecutable en la memoria RAM y 
+6. La CPU ejecuta cada una de las instrucciones 
+
+
+## Introducción a la programación en C {.smaller}
+
+Programa en C escrito en un archivo Programa01.c.
+
+```{.c code-line-numbers="1|2|3-5|4|3|1-5"}
+/*Primer programa en C*/
+#include<stdio.h>
+main(){ /*<-Inicia programa */
+  printf("Hola mundo! \n ");
+}/*Finaliza programa*/
+
+```
+
+* Línea 1 es un comentario en C. 
+* Línea 2 es la librería ```stdio.h```(standard input/output) que contiene la función ```printf```.
+* Línea **3-5** Es la **función** principal que contiene al programa que está encerrado entre llaves { }.
+* Línea 4 es la función ```printf``` que recibe una cadena de texto. Cada línea de instrucción que no es de control debe finalizar con ```;```.
+* ```\n``` es una combinación de 2 caracteres llamada secuencia de escape que representa salto de línea. Esta no se imprime en la pantalla.
+* ```\``` Se le llama caracter de escape.
+
+## Secuencia de escape comunes
+
+
+
+
+|  Símbolo              |       Nombre            |
+|----------------|----------------------------------|
+|  ```\n```    | Salto de línea                  |
+|  ```\t```     | Tabulador                  |
+|  ```\r```     | Retorno al inicio de la línea actual                  |
+|  ```\a```     | Alerta                  |
+|  ```\\```     | Caracter ```\```                |
+|  ```\*```     | Doble comilla               |
+
+
+
+
+## Configurando GCC en Windows.{.smaller}
+
+
+1. Una opción es [Instalando Devcpp](https://sourceforge.net/projects/dev-cpp/files/Binaries/Dev-C%2B%2B%204.9.9.2/devcpp-4.9.9.2_setup.exe/download). Otra es instalando Minimal GNU for Windows [MINGW](https://platzi.com/blog/como-instalar-gcc-para-compilar-programas-en-c-desde-la-consola-en-windows/).
+
+2. Una vez instalado ubicar el comando ```gcc```. Si se optó por instalarlo por medio de DevCPP, puede estar en ```C:\Program Files (x86)\Dev-Cpp\MinGW64\bin\gcc.exe```
+
+3. Ir a Inicio, clic derecho en Equipo y luego en Propiedades. Despúes, hacer click en Configuración avanzada del sistema $\rightarrow$ Variables de entorno… En Windows 10, ir a Inicio $\rightarrow$ Sistema $\rightarrow$ Configuración avanzada del sistema $\rightarrow$ Variables de entorno…
+
+## Configurando GCC en Windows.{.smaller}
+
+Propiedades del Sistema 
+
+Hacer click en el botón "Variables de entorno".
+
+![](https://static.platzi.com/media/user_upload/image11-ab0c7bcf-13c3-4f9b-9c81-979ae1d491b2.jpg "My Landscape")
+
+## Configurando GCC en Windows.{.smaller}
+
+
+::::{.columns}
+:::{.column width="50%"}
+4. Editamos la variable PATH
+
+![](https://static.platzi.com/media/user_upload/image12-749162cd-3478-43d8-b480-93ddf81c3e99.jpg)
+:::
+
+:::{.column width="50%"}
+5. Agregamos ```;C:\Program Files (x86)\Dev-Cpp\MinGW64\bin\``` al final del valor de la variable ```Path```.
+
+![](https://static.platzi.com/media/user_upload/image13-a09a57cf-4b86-459b-8cfa-d733a4e44fcc.jpg)
+:::
+
+
+::::
+
+
+
+## Compilando con línea de comandos en Windows.
+
+
+
+```
+C:\users\rodrigo\codigos>gcc
+gcc: fatal error: no input files
+compilation terminated.
+
+```
+
+Esto es una señal de que gcc si esta instalado.
+
+## Compilando con línea de comandos en Windows
+Escribimos el programa de ejemplo en un editor de texto y lo guardamos como ```Programa01.c```.
+Ahora compilamos el ```Programa01.c``` para generar el código objeto ejecutable ```programa.exe```
+
+Ejemplo:
+
+```
+C:\users\rodrigo\codigos>gcc Programa01.c -o programa.exe
+```
+
+Y lo ejecutamos:
+
+```
+C:\users\rodrigo\codigos>programa.exe
+Hola mundo! 
+
+```
+
+## Ejemplo: Instalando GCC en Linux.
+
+En Distribuciones derivadas de Debian (ubuntu, pop_os, Linux mint )
+
+```
+$sudo apt install gcc
+```
+
+
+
+
+
+## Compilando con línea de comandos en Linux.
+
+Primero probamos si tenemos la colección de compiladores GNU. Uno de los compiladores es el compilador de C en diversos estàndares.  
+
+Para esto probamos abriendo símbolo de sistema en windows, o la terminal en Linux. Usamos la terminal de Linux.
+
+
+```
+rdglpz@pop-os:~/codigos_c$ gcc
+gcc: fatal error: no input files
+compilation terminated.
+
+```
+
+Esto es una señal que gcc si esta instalado.
+
+## Compilando con línea de comandos
+Escribimos el programa de ejemplo en un editor de texto y lo guardamos como ```Programa01.c```.
+Ahora compilamos el ```Programa01.c``` para generar el código objeto ejecutable ```programa.o```
+
+Ejemplo:
+
+```
+$ gcc Programa01.c -o programa.o
+```
+
+Y lo ejecutamos:
+
+```
+rdglpz@pop-os:~/codigos_c$ ./programa.o 
+Hola mundo! 
+
+```
+
+## Declaraciones de variables. {.smaller}
+
+Ejemplo declarando una variable tipo entero sin inicializar.
+
+```{.c}
+int a;
+
+```
+
+Ejemplo declarando una variable tipo entero inicializada.
+
+
+```{.c}
+int a=1;
+```
+
+Recordemos que tenemos otros tipos de dato como:   
+
+:::: {.columns}
+
+:::{.column width="50%"}
+| tipo de enteros| Rango                   |
+|----------------|----------------------------------|
+| short          | [-32 768,32 767]                   |
+| unsigned short | [0 - 65 535]                        |
+| int            | [-32 768, 32 767]         |
+| unsigned       | [0, 4 294 967 295]                   |
+| long           | [−2147 483 647 , 2 147 483 647] |
+:::
+
+:::{.column width="50%"}
+| tipo de enteros| Rango                   |
+|----------------|----------------------------------|
+| char           |  algún caracter / valor [0,255]                  |
+| unsigned long  | [0 ,  4 294 967 295]                    |
+
+
+| Tipos de flotantes | Rango                   |
+|----------------|----------------------------------|
+| float          | $[10^{-37},10^{38}]$                   |
+| double         | $[10^{-307},10^{308}]$                        |
+| long double    | $[10^{-4931},10^{4932}]$      |
+:::
+
+::::
+
+## Imprimiendo en pantalla con `printf()` {.smaller}
+
+Para esto, la función ```printf``` está incluida en la libreria ```stdio.h``` la cual debemos de agregar al inicio del programa.
+
+```{.c}
+#include<stdio.h>
+int main(){
+    printf("Hola mundo");  
+}
+
+```
+## Imprimiendo en pantalla con `printf()` {.smaller}
+
+Si queremos imprimir un valor entero, necesitamos construir una cadena con formato.
+
+```{.c}
+#include<stdio.h>
+int main(){
+    int calificacion = 10;
+    printf("Calificacion: %d", calificacion);  
+}
+```
+
+Línea 4: la función ```printf``` esta recibiendo dos argumentos: 1) una cadena de formato de texto y 2) una variable. Imprime una cadena de texto con formato donde ```%d``` es un marcador de posición que especifica el formato para enteros (placeholder). Este marcador debe coincidir con el tipo de dato para imprimir de manera correcta.
+
+Existen otros marcadores para imprimir:
+
+:::: {.columns}
+:::{.column widht="50%"}
+* Flotantes ```%f```
+* Caracteres ```%c```
+* Cadenas de caracteres ```%s```
+:::
+
+:::{.column widht="50%"}
+* Apuntadores ```%p``` (Direcciones de memoria)
+* Valor sin signo ```%u```
+:::
+::::
+
+## Leyendo desde la entrada estándar (teclado) con `scanf()` {.smaller}
+
+
+La función `scanf()` lee desde el teclado el valor de la variable, y recibe mínimo 2 argumentos:   
+
+  ```{.c}
+  int numero;
+  scanf("%d", &numero);   // Correcto
+  scanf("%d", numero);    // incorrecto (sin &)
+  ```
+Una cadena con formato `"%d"`, y la referencia (dirección) anteponiendo **`&`** (ampersand) a la variable entera `numero`. A esta manera de manipular los valores se le llama paso por referencia.
+
+
+
+![memoria](figuras/ejemplo_memoria.png){fig-align="center" scale=0.1}
+
+
+## Leyendo e imprimiendo en pantalla. 
+
+- En `scanf()`, los valores se pasan **por referencia**. Esto es que ```&a``` da la referencia (dirección) a memoria donde se almacenará el valor dado por el usuario asociada a la variable ```a```.
+
+- En `printf()`, los valores se pasan **por valor** (no con `&`).
+
+
+
+
+
+
+## Leyendo e imprimiendo información {.smaller}
+
+
+
+```{.c}
+#include<stdio.h>
+int main(){
+    int calificacion;
+    printf("Introduce una calificacion:");
+    scanf("%d", &calificacion)
+    printf("Calificacion: %d \n", calificacion);  
+}
+
+```
+
+En este ejemplo, la función ```scanf```, tiene dos argumentos: la cadena de formato `"%d"` tipo entero, y el paso de valor por referencia de la variable ```calificación``` con un ```&``` por delante. 
+
+El ampersand ```&``` como prefijo indica la dirección asociada al identificador de la variable ```calificacion``` donde guardará el dato en memoria. 
+
+`printf` recibe la cadena de formato `"%d"`, donde pondrá el valor de la variable `calificacion`.
+
+## Estructura de Control selectivo Si {.smaller}
+Primera forma del ```if```.
+```{.c}
+condicion = 1;
+if(condicion){
+  /*<Bloque de instrucciones A>;*/
+}
+```
+Segunda forma del ```if```
+```{.c}
+condicion = 1;
+if(condicion){
+    /*<Bloque de instrucciones A>;*/
+}else{
+    /*<Bloque de instrucciones B>;*/
+}
+```
+
+Tercera forma del ```if```
+```{.c}
+condicion = 1;
+condicion2 = 0;
+if(condicion){
+    /*<Bloque de instrucciones A>;*/
+}else if (condicion2){
+    /*<Bloque de instrucciones B>;*/
+}
+```
+
+
+## Estructura de control repetitivo Mientras
+
+```{.c}
+int i = 0;
+while (i<10){
+  /* haz algo */
+  i=i+1;
+}
+```
+
+
+## Ejercicios {.smaller}
+
+
+**Hola mundo:** Escribir un programa en (lenguaje) C, que escriba en pantalla "Hola mundo".
+
+
+**Número primo en C:** Reescribir el algoritmo en PSEint a lenguaje C, que decide si un número entero positivo es primo y explica porque es primo.
+
+Ejemplo:
+
+Caso 1. Cuando el entero si es primo.
+```
+Entrada: 
+Dame un numero entero positivo: 7
+Salida: 
+El número 7 es primo porque solo es divisible entre 1 y el mismo.
+--Fin del programa--
+```
+
+Caso 2. Cuando el entero no es primo
+```
+Entrada: Dame un numero entero positivo: 10000
+Salida: El número 10000 no es primo porque es divisible entre 2.
+--Fin del programa--
+```
+## Ejercicios:
+
+
+**Familiarización con la salida en pantalla 1**:   
+Escribir un programa en C, que imprima en un renglón $n$ asteriscos proporcionados por el usuario.
+Ejemplo:
+```
+Dame el número de asteriscos para imprimir en un renglón: 5
+*****
+--Fin del programa--
+```
+
+**Familiarización con la salida en pantalla 2**:   
+Escribir un programa en C, que imprima una columna de $n$ asteriscos proporcionados por el usuario.
+Ejemplo:
+```
+Dame el número de asteriscos para imprimir en un renglón: 5
+*
+*
+*
+*
+*
+--Fin del programa--
+```
+
+
+## Ejercicios: {.smaller}
+
+
+
+**Rectángulo con asteriscos**:   
+Escribir un programa en C, que imprima un rectángulo de asteriscos de dimensión $n \times m$ proporcionado por el usuario.
+```
+Este programa dibuja un rectángulo de tamaño n x m proporcionaod por el usuario.
+
+Dame la altura del rectángulo: 5
+Dame la altura del rectángulo: 2
+
+*****
+*****
+
+--Fin del programa--
+```
+
+ 
+
+
+**Triángulo rectángulo con base = altura con asteriscos cargado a la izquerda.**:   
+Escribir un programa en C, que imprima un triángulo rectángulo cargado a la izquierda de base $b$ y altura $h$ iguales proporcionados por el usuario.
+Ejemplo:
+```
+Este programa dibuja un triángulo rectángulo con tamaño de la base igual a la altura. 
+Dame la base del triangulo rectángulo: 3
+*
+**
+***
+--Fin del programa--
+```
+
+## Ejercicios {.smaller}
+
+**Triángulo rectángulo con base = altura cargado a la derecha.**:   
+Escribir un programa en C, que imprima un triángulo rectángulo cargado a la derecha de base $b$ y altura $h$ iguales proporcionados por el usuario.
+Ejemplo:
+```
+Este programa dibuja un triángulo rectángulo con tamaño de la base igual a la altura. 
+Dame la base del triangulo rectángulo: 4
+   *
+  **
+ ***
+****
+--Fin del programa--
+```
+
+
+**Triángulo rectángulo invertido cargado a la derecha:**Escribir un programa en C, que imprima un triángulo rectángulo invertido de base $b$ y altura $h$ cargado a la derecha iguales proporcionados por el usuario.
+Ejemplo:
+```
+Este programa dibuja un triángulo rectángulo con tamaño de la base igual a la altura. 
+Dame la base del triangulo rectángulo: 3
+***
+**
+*
+--Fin del programa--
+```
+
+## Ejercicios {.smaller}
+
+
+**Triángulo isosceles**: Escribir un programa en C, que imprima un triángulo isoceles con asteriscos según la altura que proporcione el usuario y la punta siempre tenga un asterisco. Cada renglón del triángulo tiene un número impar de asteriscos.
+```
+Este programa dibuja un triángulo isoceles con altura h proporcionaod por el usuario.
+
+Dame la altura del rectángulo: 4
+
+    *
+   ***
+  *****
+ *******
+--Fin del programa--
+```
+
+## Ejercicios: {.smaller}
+
+
+
+**Rombo con asteriscos**: Escribir un programa en C, que imprima un rombo de asteriscos en un número impar de renglones.
+```
+Este programa dibuja un rombo en 2n+1 renglones proporcionados por el usuario.
+Dame n: 2
+El rombo se dibujara en 2*2+1 = 5 renglones.
+  *
+ ***
+*****
+ ***
+  *
+--Fin del programa--
+```
+
+## Ejercicios: {.smaller}
+
+
+
+**Fibonacci:** Escriba un programa en C que imprima los primeros $n$ términos de la serie de Fibonacci proporcionada por el usuario.
+```
+Serie de Fibonacci.
+Ingresa los n primeros términos de la serie de Fibonacci: 7
+Los primeros 7 términos de la serie de fibonacci son: 0,1,1,2,3,5,8,13,21
+
+```
+
+
+
+
+**Factorial:** Escriba un programa en C que lea un número positivo mayor o igual a cero y que calcule su factorial.
+$5!=5\times4\times3\times2\times1$. 
+
+El $0!=1$ por definición.
+
+Ejemplo: 
+```
+Este programa calcula el factorial n de un número entero positivo n > 0.
+Ingrese un entero positivo n >= 0: 5
+5!=120
+```
+
+## Ejercicios {.smaller}
+
+
+**Constante $e$:** Escriba un programa en C que lea el número de términos para calcular una aproximación a la constante matemática $e$.
+
+$$e = 1 + \frac{1}{1!}+\frac{1}{2!}+\frac{1}{3!} +\dots +\frac{1}{n!}$$
+Ejemplo: 
+```
+Este programa aproxima con n términos la constante matemática e.
+Ingrese un entero positivo n > 0: 4
+e es aproximadamente 2.6666.
+```

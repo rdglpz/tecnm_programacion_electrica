@@ -133,7 +133,8 @@ No es necesario hacer reasignación de variables.
 
 ****
 
-**Parcial 2 - Tarea 4. (Entrega en clase 14 de Abril)**
+**Parcial 2 - Tarea 4. (Entrega en clase 14 de Abril)**  
+
 * Entregar los programas transcritos en limpio en libreta, en C o en pseudocódigo.
 
 * Y en clase mostrar los 7 programas en C funcionando en el compilador sin errores.

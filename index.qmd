@@ -87,7 +87,7 @@ Escribirlos primero a lápiz y papel, despues traducirlos a pseint, y copiar el 
 3)  Investigar que es el "Operador Condicional Ternario". Usar chatgpt para entender el concepto. Escribir lo que entendieron en un párrafo pequeño.
 	
 
-
+****
 
 **Parcial 2 - Tarea 2:**
 
@@ -108,9 +108,11 @@ El valor actual de la variable 'a' es: 12
 El valor actual de la variable 'b' es: 30
 ```
 
+****
+
 **Parcial 2 - Tarea 3:**
 
-**Ordenamiento de 3 números (Programa fundametnal) Entregar el 24 de Marzo**
+**Ordenamiento de 3 números (Programa fundamental) Entregar el 24 de Marzo**
 
  
 Escribe un programa en PSeInt que pida al usuario 3 números enteros positivos, ordénalos en forma ascendente usando solo estructuras básicas `si/if` y comparando 1 par de números por cada condición.  
@@ -128,3 +130,172 @@ No es necesario hacer reasignación de variables.
 **Ejemplo:**  
 - Entrada: `12, 4, 7`  
 - Salida: `4, 7, 12` 
+
+****
+
+**Parcial 2 - Tarea 4. (Entrega en clase 14 de Abril)**
+* Entregar los programas transcritos en limpio en libreta, en C o en pseudocódigo.
+
+* Y en clase mostrar los 7 programas en C funcionando en el compilador sin errores.
+
+
+1. Programa ```01_tabla.c```.   
+Escribir un programa en C, que imprima en consola las tablas de multiplicar del 1 al 10, desde el 1 hasta el 10.
+
+**Entrada**
+- No aplica
+
+**Salida**
+```
+Tabla del 1
+1 x 1 = 1
+1 x 2 = 2
+1 x 3 = 3
+1 x 4 = 4
+1 x 5 = 5
+1 x 6 = 6
+1 x 7 = 7
+1 x 8 = 8
+1 x 9 = 9
+1 x 10 = 10
+
+Tabla del 2
+2 x 1 = 2
+2 x 2 = 4
+2 x 3 = 6
+2 x 4 = 8
+2 x 5 = 10
+2 x 6 = 12
+2 x 7 = 14
+2 x 8 = 16
+2 x 9 = 18
+2 x 10 = 20
+
+.
+.
+.
+
+Tabla del 10
+10 x 1 = 10
+10 x 2 = 20
+10 x 3 = 30
+.
+.
+.
+10 x 10 = 100
+```
+
+2. Programa ```02_renglon.c```.  
+Escribir un programa en C, que imprima en un renglón $n$ asteriscos proporcionados por el usuario.  
+Ejemplo:
+```
+Dame el número de asteriscos para imprimir en un renglón: 5
+*****
+--Fin del programa--
+```
+
+3.  Programa ```03_columna.c```.  
+Escribir un programa en C, que imprima una columna de $n$ asteriscos proporcionados por el usuario.  
+
+Ejemplo:
+
+```
+Dame el número de asteriscos para imprimir en un renglón: 5
+*
+*
+*
+*
+*
+--Fin del programa--
+```
+5. Programa ```04_rectangulo.c```.  
+**Rectángulo con asteriscos**:   
+Escribir un programa en C, que imprima un rectángulo de asteriscos de dimensión $n \times m$ proporcionado por el usuario.
+```
+Este programa dibuja un rectángulo de tamaño n x m proporcionaod por el usuario.
+
+Dame la altura del rectángulo: 5
+Dame la altura del rectángulo: 2
+
+*****
+*****
+
+--Fin del programa--
+```
+
+5. Programa ```05_triangulo_rectanculo_01.c ```  
+**Triángulo rectángulo con base = altura con asteriscos cargado a la izquerda.**:   
+Escribir un programa en C, que imprima un triángulo rectángulo cargado a la izquierda de base $b$ y altura $h$ iguales proporcionados por el usuario.
+Ejemplo:
+```
+Este programa dibuja un triángulo rectángulo con tamaño de la base igual a la altura. 
+Dame la base del triangulo rectángulo: 3
+*
+**
+***
+--Fin del programa--
+```
+
+
+6.  Programa ```06_triangulo_rectanculo_02.c ```  
+**Triángulo rectángulo con base = altura cargado a la derecha.**:   
+Escribir un programa en C, que imprima un triángulo rectángulo cargado a la derecha de base $b$ y altura $h$ iguales proporcionados por el usuario.
+Ejemplo:
+```
+Este programa dibuja un triángulo rectángulo con tamaño de la base igual a la altura. 
+Dame la base del triangulo rectángulo: 4
+   *
+  **
+ ***
+****
+--Fin del programa--
+```
+
+7. Programa ```07_triangulo_rectanculo_03.c ```   
+**Triángulo rectángulo invertido cargado a la derecha:**
+Escribir un programa en C, que imprima un triángulo rectángulo invertido de base $b$ y altura $h$ cargado a la derecha iguales proporcionados por el usuario.
+Ejemplo:
+```
+Este programa dibuja un triángulo rectángulo con tamaño de la base igual a la altura. 
+Dame la base del triangulo rectángulo: 3
+***
+**
+*
+--Fin del programa--
+```
+**** 
+
+**Ejercicios Extra: No son de tarea, pero podrían venir en el examen** 
+
+**Ejercicio extra 1: Triángulo isosceles**: Escribir un programa en C, que imprima un triángulo isoceles con asteriscos según la altura **par** que proporcione el usuario para que la punta siempre tenga un asterisco. Notar que cada renglón del triángulo tiene un número impar de asteriscos.
+```
+Este programa dibuja un triángulo isoceles con altura h proporcionaod por el usuario.
+
+Dame la altura del rectángulo: 4
+
+    *
+   ***
+  *****
+ *******
+--Fin del programa--
+```
+
+
+
+**Rombo con asteriscos**: 
+
+**Ejercicio Extra 2 Rombo con asteriscos** 
+Escribir un programa en C, que imprima un rombo de asteriscos en un número impar de renglones.
+```
+Este programa dibuja un rombo en 2n+1 renglones proporcionados por el usuario.
+Dame n: 2
+El rombo se dibujara en 2*2+1 = 5 renglones.
+  *
+ ***
+*****
+ ***
+  *
+--Fin del programa--
+```
+
+****

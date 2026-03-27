@@ -52,6 +52,35 @@ ul.task-list li input[type="checkbox"] {
   }
 </style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -99,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">23 de marzo de 2026</p>
+      <p class="date">27 de marzo de 2026</p>
     </div>
   </div>
   
@@ -164,6 +193,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Escribir un algoritmo en pseudocódigo a lápiz y papel que convierta grados Centigrados a grados Fahrenheit. Tener cuidado con la declaración de las variables. Escribirlos primero a lápiz y papel, despues traducirlos a pseint, y copiar el programa de pseint a papel. Se espera que este último no tenga errores.</p></li>
 <li><p>Investigar que es el “Operador Condicional Ternario”. Usar chatgpt para entender el concepto. Escribir lo que entendieron en un párrafo pequeño.</p></li>
 </ol>
+<hr>
 <p><strong>Parcial 2 - Tarea 2:</strong></p>
 <p><strong>Intercambio de dos enteros. (Programa fundamental) Entregar el Viernes 20 de Marzo.</strong></p>
 <p>Escriba un programa en pseudocódigo, y después verificarlo en PseInt, que solicite al usuario 2 números enteros y los guarde en variables con identificadores a y b, e intercambie sus valores. Esto es, asignar a b el valor de a y viceversa.</p>
@@ -177,8 +207,9 @@ El valor actual de la variable 'b' es: 12
 --Intercambio--
 El valor actual de la variable 'a' es: 12
 El valor actual de la variable 'b' es: 30</code></pre>
+<hr>
 <p><strong>Parcial 2 - Tarea 3:</strong></p>
-<p><strong>Ordenamiento de 3 números (Programa fundametnal) Entregar el 24 de Marzo</strong></p>
+<p><strong>Ordenamiento de 3 números (Programa fundamental) Entregar el 24 de Marzo</strong></p>
 <p>Escribe un programa en PSeInt que pida al usuario 3 números enteros positivos, ordénalos en forma ascendente usando solo estructuras básicas <code>si/if</code> y comparando 1 par de números por cada condición.</p>
 <p>Resolver con <strong>Si</strong> anidados y condiciones que solo comparen un par de valores. No usar and (&amp;&amp;) o or (||),</p>
 <p>No es necesario hacer reasignación de variables.</p>
@@ -189,6 +220,144 @@ El valor actual de la variable 'b' es: 30</code></pre>
 <p><strong>Ejemplo:</strong><br>
 - Entrada: <code>12, 4, 7</code><br>
 - Salida: <code>4, 7, 12</code></p>
+<hr>
+<p><strong>Parcial 2 - Tarea 4. (Entrega en clase 14 de Abril)</strong> * Entregar los programas transcritos en limpio en libreta, en C o en pseudocódigo.</p>
+<ul>
+<li>Y en clase mostrar los 7 programas en C funcionando en el compilador sin errores.</li>
+</ul>
+<ol type="1">
+<li>Programa <code>01_tabla.c</code>.<br>
+Escribir un programa en C, que imprima en consola las tablas de multiplicar del 1 al 10, desde el 1 hasta el 10.</li>
+</ol>
+<p><strong>Entrada</strong> - No aplica</p>
+<p><strong>Salida</strong></p>
+<pre><code>Tabla del 1
+1 x 1 = 1
+1 x 2 = 2
+1 x 3 = 3
+1 x 4 = 4
+1 x 5 = 5
+1 x 6 = 6
+1 x 7 = 7
+1 x 8 = 8
+1 x 9 = 9
+1 x 10 = 10
+
+Tabla del 2
+2 x 1 = 2
+2 x 2 = 4
+2 x 3 = 6
+2 x 4 = 8
+2 x 5 = 10
+2 x 6 = 12
+2 x 7 = 14
+2 x 8 = 16
+2 x 9 = 18
+2 x 10 = 20
+
+.
+.
+.
+
+Tabla del 10
+10 x 1 = 10
+10 x 2 = 20
+10 x 3 = 30
+.
+.
+.
+10 x 10 = 100</code></pre>
+<ol start="2" type="1">
+<li>Programa <code>02_renglon.c</code>.<br>
+Escribir un programa en C, que imprima en un renglón <span class="math inline">\(n\)</span> asteriscos proporcionados por el usuario.<br>
+Ejemplo:</li>
+</ol>
+<pre><code>Dame el número de asteriscos para imprimir en un renglón: 5
+*****
+--Fin del programa--</code></pre>
+<ol start="3" type="1">
+<li>Programa <code>03_columna.c</code>.<br>
+Escribir un programa en C, que imprima una columna de <span class="math inline">\(n\)</span> asteriscos proporcionados por el usuario.</li>
+</ol>
+<p>Ejemplo:</p>
+<pre><code>Dame el número de asteriscos para imprimir en un renglón: 5
+*
+*
+*
+*
+*
+--Fin del programa--</code></pre>
+<ol start="5" type="1">
+<li>Programa <code>04_rectangulo.c</code>.<br>
+<strong>Rectángulo con asteriscos</strong>:<br>
+Escribir un programa en C, que imprima un rectángulo de asteriscos de dimensión <span class="math inline">\(n \times m\)</span> proporcionado por el usuario.</li>
+</ol>
+<pre><code>Este programa dibuja un rectángulo de tamaño n x m proporcionaod por el usuario.
+
+Dame la altura del rectángulo: 5
+Dame la altura del rectángulo: 2
+
+*****
+*****
+
+--Fin del programa--</code></pre>
+<ol start="5" type="1">
+<li>Programa <code>05_triangulo_rectanculo_01.c</code><br>
+<strong>Triángulo rectángulo con base = altura con asteriscos cargado a la izquerda.</strong>:<br>
+Escribir un programa en C, que imprima un triángulo rectángulo cargado a la izquierda de base <span class="math inline">\(b\)</span> y altura <span class="math inline">\(h\)</span> iguales proporcionados por el usuario. Ejemplo:</li>
+</ol>
+<pre><code>Este programa dibuja un triángulo rectángulo con tamaño de la base igual a la altura. 
+Dame la base del triangulo rectángulo: 3
+*
+**
+***
+--Fin del programa--</code></pre>
+<ol start="6" type="1">
+<li>Programa <code>06_triangulo_rectanculo_02.c</code><br>
+<strong>Triángulo rectángulo con base = altura cargado a la derecha.</strong>:<br>
+Escribir un programa en C, que imprima un triángulo rectángulo cargado a la derecha de base <span class="math inline">\(b\)</span> y altura <span class="math inline">\(h\)</span> iguales proporcionados por el usuario. Ejemplo:</li>
+</ol>
+<pre><code>Este programa dibuja un triángulo rectángulo con tamaño de la base igual a la altura. 
+Dame la base del triangulo rectángulo: 4
+   *
+  **
+ ***
+****
+--Fin del programa--</code></pre>
+<ol start="7" type="1">
+<li>Programa <code>07_triangulo_rectanculo_03.c</code><br>
+<strong>Triángulo rectángulo invertido cargado a la derecha:</strong> Escribir un programa en C, que imprima un triángulo rectángulo invertido de base <span class="math inline">\(b\)</span> y altura <span class="math inline">\(h\)</span> cargado a la derecha iguales proporcionados por el usuario. Ejemplo:</li>
+</ol>
+<pre><code>Este programa dibuja un triángulo rectángulo con tamaño de la base igual a la altura. 
+Dame la base del triangulo rectángulo: 3
+***
+**
+*
+--Fin del programa--</code></pre>
+<hr>
+<p><strong>Ejercicios Extra: No son de tarea, pero podrían venir en el examen</strong></p>
+<p><strong>Ejercicio extra 1: Triángulo isosceles</strong>: Escribir un programa en C, que imprima un triángulo isoceles con asteriscos según la altura <strong>par</strong> que proporcione el usuario para que la punta siempre tenga un asterisco. Notar que cada renglón del triángulo tiene un número impar de asteriscos.</p>
+<pre><code>Este programa dibuja un triángulo isoceles con altura h proporcionaod por el usuario.
+
+Dame la altura del rectángulo: 4
+
+    *
+   ***
+  *****
+ *******
+--Fin del programa--</code></pre>
+<p><strong>Rombo con asteriscos</strong>:</p>
+<p><strong>Ejercicio Extra 2 Rombo con asteriscos</strong> Escribir un programa en C, que imprima un rombo de asteriscos en un número impar de renglones.</p>
+<pre><code>Este programa dibuja un rombo en 2n+1 renglones proporcionados por el usuario.
+Dame n: 2
+El rombo se dibujara en 2*2+1 = 5 renglones.
+  *
+ ***
+*****
+ ***
+  *
+--Fin del programa--</code></pre>
+<hr>
 </section>
 
 </main>

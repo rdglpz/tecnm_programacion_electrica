@@ -133,7 +133,7 @@ No es necesario hacer reasignación de variables.
 
 ****
 
-**Parcial 2 - Tarea 4. (Entrega en clase 14 de Abril)**  
+**Parcial 2 - Tarea 4 y 5 (Entrega en clase 14 de Abril)**  
 
 * Entregar los programas transcritos en limpio en libreta, en C o en pseudocódigo.
 
@@ -298,5 +298,48 @@ El rombo se dibujara en 2*2+1 = 5 renglones.
   *
 --Fin del programa--
 ```
+
+**Tarea 6 1/2** (Entrega para el 21 de Abril, mostrar su salida y transcribirlo en la libreta con anotaciones para su clara descripción y entendimiento)
+
+Programa ```factorial.c```
+
+Escribir un programa en C, que pida al usuario un número entero positivo y calcule su factorial.
+
+*El factorial de un número entero positivo $n$ (denotado como $n!$) es el producto de todos los números enteros positivos desde 1 hasta 
+$n$. Se calcula multiplicando el número por todos sus predecesores, por ejemplo: $5! =  5*4*3*2*1$. Nota por definición $0!=1$.*
+
+```
+Este programa calcula el factorial de un número entero positivo mayor a 0.
+Dame un numero entero positivo para calcular su factorial: 6
+El factorial de 6! = 6*5*4*3*2*1 = 720
+--Fin Del programa--
+
+
+```
+
+
+**Tarea 6 2/2**
+
+Programa ```aproximacion_constante_e.c```
+
+**Constante de Napier (o número de Euler (oiler)) $e$:** Escriba un programa en C que lea el número de términos para calcular una aproximación a la constante matemática $e$.
+
+$$e = 1 + \frac{1}{1!}+\frac{1}{2!}+\frac{1}{3!} +\dots +\frac{1}{n!}$$
+Ejemplo: 
+```
+Este programa aproxima con n términos la constante matemática e.
+Ingrese un entero positivo n > 0: 4
+e es aproximadamente 2.6666.
+```
+
+```
+Este programa calcula el factorial de un número entero positivo mayor a 0.
+Dame un numero entero positivo para calcular su factorial: 6
+El factorial de 6! = 6*5*4*3*2*1 = 720
+--Fin Del programa--
+
+
+```
+
 
 ****

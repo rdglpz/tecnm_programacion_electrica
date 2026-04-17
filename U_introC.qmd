@@ -700,3 +700,111 @@ Este programa aproxima con n términos la constante matemática e.
 Ingrese un entero positivo n > 0: 4
 e es aproximadamente 2.6666.
 ```
+
+
+## Control repetitivo con valor Centinela {.smaller}
+
+La **valor centinela** es un valor especial que indica el fin de la repetición de un ciclo.
+
+**Cálculo de estadísticos de número variable de calificaciones.**
+
+Ejercicio: Escribe un programa en pseudocódigo que solicite al usuario un número variable de calificaciones con valiores enteros del 0 al 10 y se detenga cuando el usuario intruduzca el un valor negativo. Al finalizar calcular el promedio de todos los valores introducidos.
+
+Ejemplo programa en ejecución:
+
+
+```
+Calculo de la suma y promedio de calificaciones.
+
+Introduzca -1 para terminal la introduccion de calificaciones.
+
+Introduce una calificación: 5
+Introduce una calificación: 7
+Introduce una calificación: 2
+Introduce una calificación: -1
+
+
+Haz introducido 3 calificaciones.
+Su suma es 14.
+Su promedio es 4.66
+```
+
+## Control repetitivo con valor bandera {.smaller}
+
+La variable bandera es una variable que almacena información sobre el estado de un programa.
+
+**Decidir si un numero entero es primo**:
+**Numero primo:**Un numero primo es un entero mayor que 1 que solo es divisible entre 1 y el mismo.
+
+Ejercicio:
+Escribe un programa que pida un número entero positivo y determine si es primo.
+
+Entradas:
+- Número entero positivo.
+
+Salidas:
+- Mensaje: “Es primo” o “No es primo”.
+
+Ejemplo:
+
+```
+Verificando número primo. - Entrada: 17
+- Salida: "17 es primo"
+```
+
+
+
+## 3.3 Ejercicios con control repetitivo {.smaller}
+
+### Primos gemelos
+Primos gemelos son pares de números primos cuya distancia es de 2 unidades. Por ejemplo, el par (3, 5) son primos gemelos porque son primos y su diferencia es 2. Otros ejemplos son (11, 13) o (41, 43). El número 5 es el único primo que puede pertenecer a dos pares de primos gemelos: (3, 5) y (5, 7). 
+
+
+**Descripción:**  
+Escribe un programa que pida un número entero positivo y determine si, este es primo, y si si, indicar si tiene número primo gemelo e imprimir el par de números primos gemelos.
+
+**Entradas:**  
+- Número entero positivo 2.  
+
+**Salidas:**
+Indicar, si es primo y si tiene un primo gemelo
+
+
+
+**Salidas:**
+11 es primo y el 13 es primo con distancia de dos unidades, por lo tanto son primos gemelos 
+
+**Ejemplo:**  
+Ingresa un número entero positivo mayor que 1.  
+- Entrada: `13`  
+- Salida: `"13 es primo y el 15 no es primo por lo que no son números primos positivos"` 
+
+
+
+
+## 3.3 Ejercicios con control repetitivo usando bandera y centinela {.smaller}
+
+### Primos gemelos
+
+
+
+**Descripción:**  
+Escribe un programa que pida un número entero positivo y determine si, este es primo, y si si, indicar si tiene número primo gemelo e imprimir el par de números primos gemelos. Preguntar si se quiere analizar otro par de números y usar un valor de -1 para decir que no, y cualquier otro para continuar.
+
+
+
+**Ejemplo:**  
+Ingresa un número entero positivo mayor que 1.  
+- Entrada: `13`  
+- Salida: `"13 es primo y el 15 no es primo por lo que no son números primos gemelos"` 
+`Desea analizar otro entero positivo?: 0
+
+
+Ingresa un número entero positivo mayor que 1.  
+- Entrada: `17`
+- Salida: `17 es primo y el 19 (17+2) también lo es, por lo que son  primos gemelos`  
+
+
+
+
+****

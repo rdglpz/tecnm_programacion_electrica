@@ -101,6 +101,8 @@
   <link href="U_introC_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="U_introC_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="U_introC_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="U_introC_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="U_introC_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="U_introC_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
@@ -809,6 +811,67 @@ Ingrese un entero positivo n &gt;= 0: 5
 <pre><code>Este programa aproxima con n términos la constante matemática e.
 Ingrese un entero positivo n &gt; 0: 4
 e es aproximadamente 2.6666.</code></pre>
+</section>
+<section id="control-repetitivo-con-valor-centinela" class="slide level2 smaller">
+<h2>Control repetitivo con valor Centinela</h2>
+<p>La <strong>valor centinela</strong> es un valor especial que indica el fin de la repetición de un ciclo.</p>
+<p><strong>Cálculo de estadísticos de número variable de calificaciones.</strong></p>
+<p>Ejercicio: Escribe un programa en pseudocódigo que solicite al usuario un número variable de calificaciones con valiores enteros del 0 al 10 y se detenga cuando el usuario intruduzca el un valor negativo. Al finalizar calcular el promedio de todos los valores introducidos.</p>
+<p>Ejemplo programa en ejecución:</p>
+<pre><code>Calculo de la suma y promedio de calificaciones.
+
+Introduzca -1 para terminal la introduccion de calificaciones.
+
+Introduce una calificación: 5
+Introduce una calificación: 7
+Introduce una calificación: 2
+Introduce una calificación: -1
+
+
+Haz introducido 3 calificaciones.
+Su suma es 14.
+Su promedio es 4.66</code></pre>
+</section>
+<section id="control-repetitivo-con-valor-bandera" class="slide level2 smaller">
+<h2>Control repetitivo con valor bandera</h2>
+<p>La variable bandera es una variable que almacena información sobre el estado de un programa.</p>
+<p><strong>Decidir si un numero entero es primo</strong>: <strong>Numero primo:</strong>Un numero primo es un entero mayor que 1 que solo es divisible entre 1 y el mismo.</p>
+<p>Ejercicio: Escribe un programa que pida un número entero positivo y determine si es primo.</p>
+<p>Entradas: - Número entero positivo.</p>
+<p>Salidas: - Mensaje: “Es primo” o “No es primo”.</p>
+<p>Ejemplo:</p>
+<pre><code>Verificando número primo. - Entrada: 17
+- Salida: "17 es primo"</code></pre>
+</section>
+<section id="ejercicios-con-control-repetitivo" class="slide level2 smaller">
+<h2>3.3 Ejercicios con control repetitivo</h2>
+<h3 id="primos-gemelos">Primos gemelos</h3>
+<p>Primos gemelos son pares de números primos cuya distancia es de 2 unidades. Por ejemplo, el par (3, 5) son primos gemelos porque son primos y su diferencia es 2. Otros ejemplos son (11, 13) o (41, 43). El número 5 es el único primo que puede pertenecer a dos pares de primos gemelos: (3, 5) y (5, 7).</p>
+<p><strong>Descripción:</strong><br>
+Escribe un programa que pida un número entero positivo y determine si, este es primo, y si si, indicar si tiene número primo gemelo e imprimir el par de números primos gemelos.</p>
+<p><strong>Entradas:</strong><br>
+- Número entero positivo 2.</p>
+<p><strong>Salidas:</strong> Indicar, si es primo y si tiene un primo gemelo</p>
+<p><strong>Salidas:</strong> 11 es primo y el 13 es primo con distancia de dos unidades, por lo tanto son primos gemelos</p>
+<p><strong>Ejemplo:</strong><br>
+Ingresa un número entero positivo mayor que 1.<br>
+- Entrada: <code>13</code><br>
+- Salida: <code>"13 es primo y el 15 no es primo por lo que no son números primos positivos"</code></p>
+</section>
+<section id="ejercicios-con-control-repetitivo-usando-bandera-y-centinela" class="slide level2 smaller">
+<h2>3.3 Ejercicios con control repetitivo usando bandera y centinela</h2>
+<h3 id="primos-gemelos-1">Primos gemelos</h3>
+<p><strong>Descripción:</strong><br>
+Escribe un programa que pida un número entero positivo y determine si, este es primo, y si si, indicar si tiene número primo gemelo e imprimir el par de números primos gemelos. Preguntar si se quiere analizar otro par de números y usar un valor de -1 para decir que no, y cualquier otro para continuar.</p>
+<p><strong>Ejemplo:</strong><br>
+Ingresa un número entero positivo mayor que 1.<br>
+- Entrada: <code>13</code><br>
+- Salida: <code>"13 es primo y el 15 no es primo por lo que no son números primos gemelos"</code> `Desea analizar otro entero positivo?: 0</p>
+<p>Ingresa un número entero positivo mayor que 1.<br>
+- Entrada: <code>17</code> - Salida: <code>17 es primo y el 19 (17+2) también lo es, por lo que son  primos gemelos</code></p>
+</section>
+<section class="slide level2">
+
 
 </section></section>
     </div>
@@ -825,6 +888,7 @@ e es aproximadamente 2.6666.</code></pre>
   <script src="U_introC_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="U_introC_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="U_introC_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="U_introC_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="U_introC_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -846,7 +910,8 @@ e es aproximadamente 2.6666.</code></pre>
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -1017,7 +1082,7 @@ e es aproximadamente 2.6666.</code></pre>
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
 
           RevealMath,
           RevealNotes,

@@ -33,8 +33,6 @@ filters: [pseudocode]
 ---
 
 
-
-
 # Programación {.smaller}
 
 Ing. Eléctrica.  

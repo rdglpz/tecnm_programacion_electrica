@@ -67,7 +67,7 @@ format:
 
 # Arreglos
 
-* [Diapositivas U3](U4.html)
+* [Diapositivas U4](U4.html)
 
 # Funciones
 

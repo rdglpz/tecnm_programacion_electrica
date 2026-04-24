@@ -242,7 +242,7 @@ Rodrigo López Farías
 
 <section>
 <section id="arreglos-1" class="title-slide slide level1 smaller center">
-<h1>5 Arreglos</h1>
+<h1>4 Arreglos</h1>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -295,7 +295,7 @@ Rodrigo López Farías
 </table>
 </section>
 <section id="arreglos-2" class="slide level2 smaller">
-<h2>5 Arreglos</h2>
+<h2>4 Arreglos</h2>
 <p>Inicializando e imprimiendo un arreglo de enteros tamaño 10.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb5-1"><a href=""></a><span class="pp">#include</span><span class="im">&lt;stdio.h&gt;</span></span>
 <span id="cb5-2"><a href=""></a><span class="pp">#define T </span><span class="dv">10</span></span>
@@ -314,7 +314,7 @@ Rodrigo López Farías
 <span id="cb5-15"><a href=""></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="arreglos-3" class="slide level2 smaller">
-<h2>5 Arreglos</h2>
+<h2>4 Arreglos</h2>
 <p>Inicializando e imprimiendo un arreglo de enteros con ceros.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb6-1"><a href=""></a><span class="pp">#include</span><span class="im">&lt;stdio.h&gt;</span></span>
 <span id="cb6-2"><a href=""></a><span class="pp">#define T </span><span class="dv">10</span></span>
@@ -334,7 +334,7 @@ Rodrigo López Farías
 <span id="cb6-16"><a href=""></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="arreglos-4" class="slide level2 smaller">
-<h2>5 Arreglos</h2>
+<h2>4 Arreglos</h2>
 <p>Inicializando e imprimiendo un arreglo con enteros aleatorios del 1 al 10</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb7-1"><a href=""></a><span class="pp">#include</span><span class="im">&lt;stdio.h&gt;</span></span>
 <span id="cb7-2"><a href=""></a><span class="pp">#include</span><span class="im">&lt;stdlib.h&gt;</span></span>
@@ -368,7 +368,7 @@ Rodrigo López Farías
 </section>
 <section id="ejercicio" class="slide level2 smaller">
 <h2>Ejercicio:</h2>
-<p>Escribir en c una función <code>void graficar(int a[],T)</code> que genere una representación en grafica de barras con asteriscos de los valores de un arreglo de enteros de tamaño <code>T</code>.</p>
+<p>Escribir un programa en C que genere una representación en grafica de barras con asteriscos de los valores de un arreglo de enteros de tamaño <code>T</code>.</p>
 <p>Por ejemplo: Si el arrego <code>a[5]={0,4,3,5,1}</code>, imprimir su representación en grafica de barras:</p>
 <pre><code>ix
 --
@@ -381,7 +381,7 @@ Rodrigo López Farías
 </code></pre>
 </section>
 <section id="algoritmos-de-ordenamiento." class="slide level2 smaller">
-<h2>5 Algoritmos de ordenamiento.</h2>
+<h2>4 Algoritmos de ordenamiento.</h2>
 <p>Una de las aplicaciónes mas importantes en ciencias de la computación, es ordenamiento de datos. El algoritmo mas sencillo de todos es el <strong>Algoritmo de la burbuja</strong>.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb9-1"><a href=""></a><span class="pp">#include</span><span class="im">&lt;stdio.h&gt;</span></span>
 <span id="cb9-2"><a href=""></a><span class="pp">#include</span><span class="im">&lt;stdlib.h&gt;</span></span>
@@ -425,11 +425,52 @@ Rodrigo López Farías
 <span id="cb9-40"><a href=""></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="algoritmos-de-ordenamiento.-1" class="slide level2 smaller">
-<h2>5 Algoritmos de ordenamiento.</h2>
-<p>Otro algoritmo de ordenamiento es el ordenamiento por insercion.</p>
+<h2>4 Algoritmos de ordenamiento.</h2>
+<p>Ordenamiento por inserción.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb10-1"><a href=""></a></span>
+<span id="cb10-2"><a href=""></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb10-3"><a href=""></a></span>
+<span id="cb10-4"><a href=""></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb10-5"><a href=""></a>    <span class="co">/*Ordena de manera ascendente */</span></span>
+<span id="cb10-6"><a href=""></a>    <span class="co">/*arreglo desordenado de enteros*/</span></span>
+<span id="cb10-7"><a href=""></a>    <span class="dt">int</span> arr<span class="op">[]</span> <span class="op">=</span> <span class="op">{</span><span class="dv">5</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">8</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">4</span><span class="op">};</span></span>
+<span id="cb10-8"><a href=""></a></span>
+<span id="cb10-9"><a href=""></a>    <span class="co">/*especificar manualmente el tamaño del arreglo*/</span></span>
+<span id="cb10-10"><a href=""></a>    <span class="dt">int</span> n <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb10-11"><a href=""></a></span>
+<span id="cb10-12"><a href=""></a>    <span class="co">/*i,j son indices que recorren el arreglo*/</span></span>
+<span id="cb10-13"><a href=""></a>    <span class="co">/* valor tendra la copia de un valor del arreglo a acomodar*/</span></span>
+<span id="cb10-14"><a href=""></a>    <span class="dt">int</span> i<span class="op">,</span> j<span class="op">,</span> valor<span class="op">;</span></span>
+<span id="cb10-15"><a href=""></a></span>
+<span id="cb10-16"><a href=""></a>    <span class="co">/*se asume que el lugar i=0 ya esta ordenado*/</span></span>
+<span id="cb10-17"><a href=""></a>    <span class="co">/*por eso i recorre de 1 a n-1*/</span> </span>
+<span id="cb10-18"><a href=""></a>    i <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb10-19"><a href=""></a>    <span class="cf">while</span> <span class="op">(</span>i <span class="op">&lt;</span> n<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb10-20"><a href=""></a>        valor <span class="op">=</span> arr<span class="op">[</span>i<span class="op">];</span></span>
+<span id="cb10-21"><a href=""></a>        j <span class="op">=</span> i <span class="op">-</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb10-22"><a href=""></a></span>
+<span id="cb10-23"><a href=""></a>        <span class="cf">while</span> <span class="op">(</span>j <span class="op">&gt;=</span> <span class="dv">0</span> <span class="op">&amp;&amp;</span> arr<span class="op">[</span>j<span class="op">]</span> <span class="op">&gt;</span> valor<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb10-24"><a href=""></a>            arr<span class="op">[</span>j <span class="op">+</span> <span class="dv">1</span><span class="op">]</span> <span class="op">=</span> arr<span class="op">[</span>j<span class="op">];</span> <span class="co">/*recorrer a la derecha arr[j] en arr[j+1]*/</span></span>
+<span id="cb10-25"><a href=""></a>            j <span class="op">=</span> j <span class="op">-</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb10-26"><a href=""></a>        <span class="op">}</span></span>
+<span id="cb10-27"><a href=""></a></span>
+<span id="cb10-28"><a href=""></a>        arr<span class="op">[</span>j <span class="op">+</span> <span class="dv">1</span><span class="op">]</span> <span class="op">=</span> valor<span class="op">;</span></span>
+<span id="cb10-29"><a href=""></a>        i <span class="op">=</span> i <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb10-30"><a href=""></a>    <span class="op">}</span></span>
+<span id="cb10-31"><a href=""></a></span>
+<span id="cb10-32"><a href=""></a>    <span class="co">/* imprimir resultado */</span></span>
+<span id="cb10-33"><a href=""></a>    i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb10-34"><a href=""></a>    <span class="cf">while</span> <span class="op">(</span>i <span class="op">&lt;</span> n<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb10-35"><a href=""></a>        printf<span class="op">(</span><span class="st">"</span><span class="sc">%d</span><span class="st"> "</span><span class="op">,</span> arr<span class="op">[</span>i<span class="op">]);</span></span>
+<span id="cb10-36"><a href=""></a>        i <span class="op">=</span> i <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb10-37"><a href=""></a>    <span class="op">}</span></span>
+<span id="cb10-38"><a href=""></a>    printf<span class="op">(</span><span class="st">"</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb10-39"><a href=""></a></span>
+<span id="cb10-40"><a href=""></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb10-41"><a href=""></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="ejercicio-con-arreglo-unidimensional" class="slide level2 smaller">
-<h2>5 Ejercicio con arreglo unidimensional</h2>
+<h2>4 Ejercicio con arreglo unidimensional</h2>
 <p>Ejercicio:</p>
 <p>Programar un histograma de frecuencias. Escribir un programa en C que genere N números aleatorios entre 1 y 10 solicitados por el usuario, y genere un histograma de frecuencias en consola.</p>
 <p>Por ejemplo si 10 valores generados son a = [1,1,1,2,2,3,3,3,3,3]</p>
@@ -478,7 +519,7 @@ Rodrigo López Farías
 <ul>
 <li>Se puede utilizar con una literal de cadena para su inicialización.</li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb10-1"><a href=""></a><span class="dt">char</span> s<span class="op">[]</span> <span class="op">=</span> <span class="st">"mecanica"</span><span class="op">;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb11-1"><a href=""></a><span class="dt">char</span> s<span class="op">[]</span> <span class="op">=</span> <span class="st">"mecanica"</span><span class="op">;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>su tama~no es del número de caracteres + un caracter nulo <code>\0</code>.</li>
 </ul>
@@ -486,73 +527,73 @@ Rodrigo López Farías
 </section>
 <section id="leyendo-e-imprimendo-una-cadena-de-caracteres-en-consola" class="slide level2 smaller">
 <h2>Leyendo e imprimendo una cadena de caracteres en consola</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb11-1"><a href=""></a></span>
-<span id="cb11-2"><a href=""></a><span class="pp">#include</span><span class="im">&lt;stdio.h&gt;</span></span>
-<span id="cb11-3"><a href=""></a></span>
-<span id="cb11-4"><a href=""></a><span class="dt">int</span> main<span class="op">(){</span></span>
-<span id="cb11-5"><a href=""></a></span>
-<span id="cb11-6"><a href=""></a>    <span class="dt">char</span> string<span class="op">[</span><span class="dv">20</span><span class="op">];</span></span>
-<span id="cb11-7"><a href=""></a>    scanf<span class="op">(</span><span class="st">"</span><span class="sc">%s</span><span class="st">"</span><span class="op">,</span> string<span class="op">);</span></span>
-<span id="cb11-8"><a href=""></a>    printf<span class="op">(</span><span class="st">"</span><span class="sc">%s</span><span class="st">"</span><span class="op">,</span> string<span class="op">);</span></span>
-<span id="cb11-9"><a href=""></a></span>
-<span id="cb11-10"><a href=""></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb12-1"><a href=""></a></span>
+<span id="cb12-2"><a href=""></a><span class="pp">#include</span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb12-3"><a href=""></a></span>
+<span id="cb12-4"><a href=""></a><span class="dt">int</span> main<span class="op">(){</span></span>
+<span id="cb12-5"><a href=""></a></span>
+<span id="cb12-6"><a href=""></a>    <span class="dt">char</span> string<span class="op">[</span><span class="dv">20</span><span class="op">];</span></span>
+<span id="cb12-7"><a href=""></a>    scanf<span class="op">(</span><span class="st">"</span><span class="sc">%s</span><span class="st">"</span><span class="op">,</span> string<span class="op">);</span></span>
+<span id="cb12-8"><a href=""></a>    printf<span class="op">(</span><span class="st">"</span><span class="sc">%s</span><span class="st">"</span><span class="op">,</span> string<span class="op">);</span></span>
+<span id="cb12-9"><a href=""></a></span>
+<span id="cb12-10"><a href=""></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="section" class="slide level2 smaller">
 <h2></h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb12-1"><a href=""></a><span class="pp">#include</span><span class="im">&lt;stdio.h&gt;</span></span>
-<span id="cb12-2"><a href=""></a></span>
-<span id="cb12-3"><a href=""></a></span>
-<span id="cb12-4"><a href=""></a><span class="dt">int</span> main<span class="op">(){</span>a</span>
-<span id="cb12-5"><a href=""></a>    <span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb12-6"><a href=""></a>      <span class="dt">char</span> string<span class="op">[</span><span class="dv">20</span><span class="op">];</span></span>
-<span id="cb12-7"><a href=""></a>      scanf<span class="op">(</span><span class="st">"</span><span class="sc">%s</span><span class="st">"</span><span class="op">,</span> string<span class="op">);</span></span>
-<span id="cb12-8"><a href=""></a></span>
-<span id="cb12-9"><a href=""></a>      printf<span class="op">(</span><span class="st">"Imprimendo caracter por caracter hasta el fin de la cadena</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
-<span id="cb12-10"><a href=""></a>      <span class="cf">while</span><span class="op">(</span>string<span class="op">[</span>i<span class="op">]!=</span><span class="ch">'</span><span class="sc">\0</span><span class="ch">'</span><span class="op">){</span></span>
-<span id="cb12-11"><a href=""></a>            printf<span class="op">(</span><span class="st">"</span><span class="sc">%c</span><span class="st"> "</span><span class="op">,</span> string<span class="op">[</span>i<span class="op">]);</span></span>
-<span id="cb12-12"><a href=""></a>            i <span class="op">=</span> i <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
-<span id="cb12-13"><a href=""></a>      <span class="op">}</span></span>
-<span id="cb12-14"><a href=""></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb13-1"><a href=""></a><span class="pp">#include</span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb13-2"><a href=""></a></span>
+<span id="cb13-3"><a href=""></a></span>
+<span id="cb13-4"><a href=""></a><span class="dt">int</span> main<span class="op">(){</span>a</span>
+<span id="cb13-5"><a href=""></a>    <span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb13-6"><a href=""></a>      <span class="dt">char</span> string<span class="op">[</span><span class="dv">20</span><span class="op">];</span></span>
+<span id="cb13-7"><a href=""></a>      scanf<span class="op">(</span><span class="st">"</span><span class="sc">%s</span><span class="st">"</span><span class="op">,</span> string<span class="op">);</span></span>
+<span id="cb13-8"><a href=""></a></span>
+<span id="cb13-9"><a href=""></a>      printf<span class="op">(</span><span class="st">"Imprimendo caracter por caracter hasta el fin de la cadena</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb13-10"><a href=""></a>      <span class="cf">while</span><span class="op">(</span>string<span class="op">[</span>i<span class="op">]!=</span><span class="ch">'</span><span class="sc">\0</span><span class="ch">'</span><span class="op">){</span></span>
+<span id="cb13-11"><a href=""></a>            printf<span class="op">(</span><span class="st">"</span><span class="sc">%c</span><span class="st"> "</span><span class="op">,</span> string<span class="op">[</span>i<span class="op">]);</span></span>
+<span id="cb13-12"><a href=""></a>            i <span class="op">=</span> i <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb13-13"><a href=""></a>      <span class="op">}</span></span>
+<span id="cb13-14"><a href=""></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="ejercicio.-qué-hace-el-siguiente-programa" class="slide level2">
 <h2>Ejercicio. Qué hace el siguiente programa?</h2>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb13-1"><a href=""></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
-<span id="cb13-2"><a href=""></a><span class="pp">#include </span><span class="im">&lt;stdlib.h&gt;</span></span>
-<span id="cb13-3"><a href=""></a><span class="pp">#include </span><span class="im">&lt;time.h&gt;</span></span>
-<span id="cb13-4"><a href=""></a></span>
-<span id="cb13-5"><a href=""></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb13-6"><a href=""></a>    <span class="dt">int</span> n<span class="op">;</span></span>
-<span id="cb13-7"><a href=""></a></span>
-<span id="cb13-8"><a href=""></a>    <span class="co">/* Semilla para generar números aleatorios diferentes cada vez*/</span></span>
-<span id="cb13-9"><a href=""></a>    srand<span class="op">(</span>time<span class="op">(</span>NULL<span class="op">));</span></span>
-<span id="cb13-10"><a href=""></a></span>
-<span id="cb13-11"><a href=""></a>    <span class="co">/* Pedir tamaño del arreglo*/</span></span>
-<span id="cb13-12"><a href=""></a>    printf<span class="op">(</span><span class="st">"Ingrese el tamaño del arreglo: "</span><span class="op">);</span></span>
-<span id="cb13-13"><a href=""></a>    scanf<span class="op">(</span><span class="st">"</span><span class="sc">%d</span><span class="st">"</span><span class="op">,</span> <span class="op">&amp;</span>n<span class="op">);</span></span>
-<span id="cb13-14"><a href=""></a></span>
-<span id="cb13-15"><a href=""></a>    <span class="dt">int</span> i<span class="op">,</span>j<span class="op">;</span></span>
-<span id="cb13-16"><a href=""></a>    <span class="dt">int</span> arreglo<span class="op">[</span>n<span class="op">];</span></span>
-<span id="cb13-17"><a href=""></a>    <span class="dt">int</span> conteo<span class="op">[</span><span class="dv">11</span><span class="op">]</span> <span class="op">=</span> <span class="op">{</span><span class="dv">0</span><span class="op">};</span> <span class="co">// conteo[1] a conteo[10]</span></span>
-<span id="cb13-18"><a href=""></a></span>
-<span id="cb13-19"><a href=""></a>    <span class="co">/* Llenar el arreglo con números aleatorios entre 1 y 10*/</span></span>
-<span id="cb13-20"><a href=""></a>    printf<span class="op">(</span><span class="st">"</span><span class="sc">\n</span><span class="st">Valores generados:</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
-<span id="cb13-21"><a href=""></a>    i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb13-22"><a href=""></a>    </span>
-<span id="cb13-23"><a href=""></a>    <span class="cf">while</span><span class="op">(</span>i<span class="op">&lt;</span>n<span class="op">){</span></span>
-<span id="cb13-24"><a href=""></a>        arreglo<span class="op">[</span>i<span class="op">]</span> <span class="op">=</span> rand<span class="op">()</span> <span class="op">%</span> <span class="dv">10</span> <span class="op">+</span> <span class="dv">1</span><span class="op">;</span> <span class="co">// número entre 1 y 10</span></span>
-<span id="cb13-25"><a href=""></a>        printf<span class="op">(</span><span class="st">"</span><span class="sc">%d</span><span class="st"> "</span><span class="op">,</span> arreglo<span class="op">[</span>i<span class="op">]);</span></span>
-<span id="cb13-26"><a href=""></a>        conteo<span class="op">[</span>arreglo<span class="op">[</span>i<span class="op">]]</span> <span class="op">=</span> conteo<span class="op">[</span>arreglo<span class="op">[</span>i<span class="op">]]</span> <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
-<span id="cb13-27"><a href=""></a>        i<span class="op">=</span>i<span class="op">+</span><span class="dv">1</span><span class="op">;</span></span>
-<span id="cb13-28"><a href=""></a>    <span class="op">}</span></span>
-<span id="cb13-29"><a href=""></a></span>
-<span id="cb13-30"><a href=""></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb13-31"><a href=""></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb14-1"><a href=""></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb14-2"><a href=""></a><span class="pp">#include </span><span class="im">&lt;stdlib.h&gt;</span></span>
+<span id="cb14-3"><a href=""></a><span class="pp">#include </span><span class="im">&lt;time.h&gt;</span></span>
+<span id="cb14-4"><a href=""></a></span>
+<span id="cb14-5"><a href=""></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb14-6"><a href=""></a>    <span class="dt">int</span> n<span class="op">;</span></span>
+<span id="cb14-7"><a href=""></a></span>
+<span id="cb14-8"><a href=""></a>    <span class="co">/* Semilla para generar números aleatorios diferentes cada vez*/</span></span>
+<span id="cb14-9"><a href=""></a>    srand<span class="op">(</span>time<span class="op">(</span>NULL<span class="op">));</span></span>
+<span id="cb14-10"><a href=""></a></span>
+<span id="cb14-11"><a href=""></a>    <span class="co">/* Pedir tamaño del arreglo*/</span></span>
+<span id="cb14-12"><a href=""></a>    printf<span class="op">(</span><span class="st">"Ingrese el tamaño del arreglo: "</span><span class="op">);</span></span>
+<span id="cb14-13"><a href=""></a>    scanf<span class="op">(</span><span class="st">"</span><span class="sc">%d</span><span class="st">"</span><span class="op">,</span> <span class="op">&amp;</span>n<span class="op">);</span></span>
+<span id="cb14-14"><a href=""></a></span>
+<span id="cb14-15"><a href=""></a>    <span class="dt">int</span> i<span class="op">,</span>j<span class="op">;</span></span>
+<span id="cb14-16"><a href=""></a>    <span class="dt">int</span> arreglo<span class="op">[</span>n<span class="op">];</span></span>
+<span id="cb14-17"><a href=""></a>    <span class="dt">int</span> conteo<span class="op">[</span><span class="dv">11</span><span class="op">]</span> <span class="op">=</span> <span class="op">{</span><span class="dv">0</span><span class="op">};</span> <span class="co">// conteo[1] a conteo[10]</span></span>
+<span id="cb14-18"><a href=""></a></span>
+<span id="cb14-19"><a href=""></a>    <span class="co">/* Llenar el arreglo con números aleatorios entre 1 y 10*/</span></span>
+<span id="cb14-20"><a href=""></a>    printf<span class="op">(</span><span class="st">"</span><span class="sc">\n</span><span class="st">Valores generados:</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb14-21"><a href=""></a>    i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb14-22"><a href=""></a>    </span>
+<span id="cb14-23"><a href=""></a>    <span class="cf">while</span><span class="op">(</span>i<span class="op">&lt;</span>n<span class="op">){</span></span>
+<span id="cb14-24"><a href=""></a>        arreglo<span class="op">[</span>i<span class="op">]</span> <span class="op">=</span> rand<span class="op">()</span> <span class="op">%</span> <span class="dv">10</span> <span class="op">+</span> <span class="dv">1</span><span class="op">;</span> <span class="co">// número entre 1 y 10</span></span>
+<span id="cb14-25"><a href=""></a>        printf<span class="op">(</span><span class="st">"</span><span class="sc">%d</span><span class="st"> "</span><span class="op">,</span> arreglo<span class="op">[</span>i<span class="op">]);</span></span>
+<span id="cb14-26"><a href=""></a>        conteo<span class="op">[</span>arreglo<span class="op">[</span>i<span class="op">]]</span> <span class="op">=</span> conteo<span class="op">[</span>arreglo<span class="op">[</span>i<span class="op">]]</span> <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb14-27"><a href=""></a>        i<span class="op">=</span>i<span class="op">+</span><span class="dv">1</span><span class="op">;</span></span>
+<span id="cb14-28"><a href=""></a>    <span class="op">}</span></span>
+<span id="cb14-29"><a href=""></a></span>
+<span id="cb14-30"><a href=""></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb14-31"><a href=""></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="arreglos-bidimensionales" class="slide level2">
 <h2>Arreglos bidimensionales</h2>
 <p>En C se declaran como</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb14-1"><a href=""></a><span class="co">/*M y N son dos números enteros positivos mayores que cero*/</span></span>
-<span id="cb14-2"><a href=""></a><span class="dt">int</span> a<span class="op">[</span>M<span class="op">][</span>N<span class="op">];</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource c number-lines code-with-copy"><code class="sourceCode c"><span id="cb15-1"><a href=""></a><span class="co">/*M y N son dos números enteros positivos mayores que cero*/</span></span>
+<span id="cb15-2"><a href=""></a><span class="dt">int</span> a<span class="op">[</span>M<span class="op">][</span>N<span class="op">];</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="ejercicio-arreglo-bidimensional" class="slide level2">
 <h2>Ejercicio arreglo bidimensional</h2>

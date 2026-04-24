@@ -170,7 +170,7 @@ int main(){
 }
 ```
 ## Ejercicio: {.smaller}
-Escribir en c una función ```void graficar(int a[],T)``` que genere una representación en grafica de barras con asteriscos de los valores de un arreglo de enteros de tamaño ```T```.
+Escribir un programa en C que genere una representación en grafica de barras con asteriscos de los valores de un arreglo de enteros de tamaño ```T```.
 
 
 Por ejemplo: Si el arrego `a[5]={0,4,3,5,1}`, imprimir su representación en grafica de barras: 
@@ -234,7 +234,52 @@ int main(){
 ```
 ## 4 Algoritmos de ordenamiento. {.smaller}
 
-Otro algoritmo de ordenamiento es el ordenamiento por insercion.
+Ordenamiento por inserción.
+
+```{.c}
+
+#include <stdio.h>
+
+int main() {
+    /*Ordena de manera ascendente */
+    /*arreglo desordenado de enteros*/
+    int arr[] = {5, 3, 8, 1, 4};
+
+    /*especificar manualmente el tamaño del arreglo*/
+    int n = 5;
+
+    /*i,j son indices que recorren el arreglo*/
+    /* valor tendra la copia de un valor del arreglo a acomodar*/
+    int i, j, valor;
+
+    /*se asume que el lugar i=0 ya esta ordenado*/
+    /*por eso i recorre de 1 a n-1*/ 
+    i = 1;
+    while (i < n) {
+        valor = arr[i];
+        j = i - 1;
+
+        while (j >= 0 && arr[j] > valor) {
+            arr[j + 1] = arr[j]; /*recorrer a la derecha arr[j] en arr[j+1]*/
+            j = j - 1;
+        }
+
+        arr[j + 1] = valor;
+        i = i + 1;
+    }
+
+    /* imprimir resultado */
+    i = 0;
+    while (i < n) {
+        printf("%d ", arr[i]);
+        i = i + 1;
+    }
+    printf("\n");
+
+    return 0;
+}
+
+```
 
 
 ## 4 Ejercicio con arreglo unidimensional {.smaller}

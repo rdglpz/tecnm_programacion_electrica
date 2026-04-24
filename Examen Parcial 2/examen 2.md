@@ -1,17 +1,39 @@
-Primos Gemelos. 
+# Examen 2 
+Unidad 3 Primos Gemelos. 
+
+Primos gemelos son pares de números primos cuya distancia es de 2 unidades. Por ejemplo, el par (3, 5) son primos gemelos porque son primos y su diferencia es 2. Otros ejemplos son (11, 13) o (41, 43). El número 5 es el único primo que puede pertenecer a dos pares de primos gemelos: (3, 5) y (5, 7).
+
+## Descripción del ejercicio.
 
 Determinar si $n$ y $n+2$ son primos.
-
  
-Escribe un programa que pida un número entero positivo $n>1$ al usuario y determine si este es primo. 
+Escribe un programa que pida al usuario un número entero positivo $n>1$ y determine si este es primo. 
 
-Si no es primo imprimir en consola un mensaje anunciando que $n$ no es primo y por lo tanto no tiene primo gemelo y finalizar el programa.
+Si no es primo imprimir en consola un mensaje anunciando que $n$ no es primo y por lo tanto no tiene primo gemelo. Finalizar el programa. 50%
 
-Si $n$ es primo entonces calcular si $n+2$ es primo.
+Si $n$ es primo entonces calcular si $n+2$ es primo. 
 
 Si $n+2$ no es primo imprimir "n es primo pero n+2 no es primo por lo tanto n no tiene primo gemelo".
 
 Si $n+2$ es primo, imprimir "n es primo y n+2 también es primo por lo tanto son primos gemelos"
+
+Ejemplo:
+--caso 1--
+Dame un número entero $n>1$: 4
+4 no es primo
+
+--caso 2--
+Dame un número entero $n>1$: 7
+7 es primo
+9 no es primo 
+Por lo tanto (7,9) no son primos gemelos.
+
+--caso 3--
+Dame un número entero $n>1$: 11
+11 es primo
+13 es primo 
+Por lo tanto (11,13) son primos gemelos.
+
 
 
 No utilizar ```for(){}```.
@@ -22,63 +44,51 @@ Rubrica.
 Programa funcionando con while, printf, scanf detectando no primo, primo, primo gemelo (doble bandera) 100%
 
 
+Alternativa 2 
 Programa primo simple con while, printf, scanf 50% salida, primo , no primo. 
 
+--caso 1--
+Dame un número entero $n>1$: 4
+4 no es primo
+--Fin del programa--
 
-Programa primo simple mejorado con while, printf, scanf 70% salida, primo , no primo. 
-
-
-
-
-
-
-
-
-número primo gemelo e imprimir el par de números primos gemelos. Preguntar si se quiere analizar otro par de números y usar un valor de -1 para decir que no, y cualquier otro para continuar.
+--caso 2--
+Dame un número entero $n>1$: 7
+7 es primo
+--Fin del programa--
 
 
-```
-#include<stdio.h>
+
+Para sacar un 70% hacer mas eficiente el algoritmo (reducir el numero de operaciones para calcular si es primo).
+
+--caso 1--
+Dame un número entero $n>1$: 4
+Con 2 comparaciones se deduce que 4 no es primo
+--Fin del programa--
+
+--caso 2--
+Dame un número entero $n>1$: 7
+Con 2 comparaciones se deduce que 7 es primo
+--Fin del programa--
+
+para sacar 90 hacer que el Programa primo simple que nunca termina de pedir numeros n>1. Verificar si es primo hasta que el usuario proporciona una señal de salida (usar vlor centinela) 90.
+
+--caso 1--
+Dame un número entero $n>1$: 4
+Con 2 comparaciones se deduce que 4 no es primo
+
+Dame un número entero $n>1$: 11
+Con 4 comparaciones se deduce que 11 no es primo
+
+Dame un número entero $n>1$: 0
+--Fin del programa--
 
 
-int main(){
-	
-	int primo_a = 1;
-	int primo_b = 1;
-	int d = 2;
-	int n;
-	scanf("%d", &n);
 
 
-	while(d<n){
-		
-		if(n%d==0){
-			primo_a = 0;
-			d = n;
-		}
-		
-		d = d + 1;
-	}
-
-	if(primo_a == 1){
-		/*Existe la posibilidad que tenga un primo gemelo*/
-		d = 2;
-		while(d<n+2){
-			if(n+2%d == 0){
-				primo_b=0;
-				d = n + 2;
-			}
-			d = d + 1;
-
-		}		
-
-	
-	}
-	
-	if((primo_a == 1) && (primo_b ==1)){
-	    printf("%d y %d son primos gemelos", n, n+2);
-	}
 
 
-}
-```
+
+
+
+

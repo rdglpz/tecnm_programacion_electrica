@@ -76,8 +76,8 @@ format:
 
 # Tareas 
  
-
-**Parcial 1 - Tarea 1**
+## Parcial 1
+**Tarea 1**
 
 Entregar el Viernes 13 de Marzo 2026.    
 
@@ -90,8 +90,9 @@ Escribirlos primero a lápiz y papel, despues traducirlos a pseint, y copiar el 
 	
 
 ****
+## Parcial 2
 
-**Parcial 2 - Tarea 2:**
+**Tarea 2:**
 
 **Intercambio de dos enteros. (Programa fundamental) Entregar el Viernes 20 de Marzo.**
 
@@ -320,7 +321,7 @@ El factorial de 6! = 6*5*4*3*2*1 = 720
 ```
 
 
-**Tarea 6 2/2**
+**Tarea 7 2/2**
 
 Programa ```aproximacion_constante_e.c```
 
@@ -343,5 +344,18 @@ El factorial de 6! = 6*5*4*3*2*1 = 720
 
 ```
 
+## Parcial 3
+
+**Tarea 8 [Mostrar el .c y transcrito en libreta con comentarios Para el martes 28 de abril]**
+
+Escribir un programa en C que genere un arreglo de $n=10$ números enteros aleatorios del 1 al 10 y mostrar su representación en gráfica de barras con renglones de asteriscos.
+
+Por ejemplo: Si el arreglo ```a[5]={0,4,3,5,1}``, imprimir su representación en grafica de barras:
+
+0:  
+1:****   
+2:***  
+3:*****  
+4:*   
 
 ****

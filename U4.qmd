@@ -232,6 +232,52 @@ int main(){
         }
 }
 ```
+
+## 4 Algoritmos de ordenamiento. {.smaller}
+
+Que hace el siguiente algoritmo?
+
+```{.c}
+
+#include <stdio.h>
+
+int main() {
+    /*Ordena de manera ascendente */
+    /*arreglo desordenado de enteros*/
+    int arr[] = {5, 3, 8, 1, 4};
+
+    /*especificar manualmente el tamaño del arreglo*/
+    int n = 5;  
+    int i, j, aux;
+
+    i = 1;
+    while (i < n) {
+
+        aux = arr[i];
+        j = i - 1;
+
+        while (j >= 0 && arr[j] > aux) {
+            arr[j + 1] = arr[j]; 
+            j = j - 1;
+        }
+
+        arr[j + 1] = aux;
+        i = i + 1;
+    }
+
+    i = 0;
+    while (i < n) {
+        printf("%d ", arr[i]);
+        i = i + 1;
+    }
+    printf("\n");
+
+    return 0;
+}
+
+```
+
+
 ## 4 Algoritmos de ordenamiento. {.smaller}
 
 Ordenamiento por inserción.
@@ -249,22 +295,25 @@ int main() {
     int n = 5;
 
     /*i,j son indices que recorren el arreglo*/
-    /* valor tendra la copia de un valor del arreglo a acomodar*/
-    int i, j, valor;
+    /* aux tendra la copia de un valor del arreglo a acomodar*/
+    int i, j, aux;
 
     /*se asume que el lugar i=0 ya esta ordenado*/
     /*por eso i recorre de 1 a n-1*/ 
     i = 1;
     while (i < n) {
-        valor = arr[i];
+
+        aux = arr[i];
         j = i - 1;
 
-        while (j >= 0 && arr[j] > valor) {
-            arr[j + 1] = arr[j]; /*recorrer a la derecha arr[j] en arr[j+1]*/
+        /*Recorre el arreglo mientras j>=0 y aux no este ordenado (arr[j] > aux*/
+        while (j >= 0 && arr[j] > aux) {
+
+            arr[j + 1] = arr[j]; /*intercambiar a la derecha arr[j] en arr[j+1] */
             j = j - 1;
         }
 
-        arr[j + 1] = valor;
+        arr[j + 1] = aux;
         i = i + 1;
     }
 
@@ -281,6 +330,38 @@ int main() {
 
 ```
 
+
+## Busqueda binaria.
+
+Cuando los arreglos estan ordenados, se requieren algoritmos eficientes para buscar valores.
+
+Un algoritmo eficiente es la **Búsqueda Binaria**
+
+
+
+![Busqueda binaria](figuras/bbin.png)
+
+## Tarea: programar la criba de Eratostenes en consola para la búsqueda de números primos.
+
+![Busqueda binaria](figuras/Sieve_of_Eratosthenes_animation.gif)
+
+## Arreglos bidimensionales
+
+En C se declaran como
+```{.c}
+/*M y N son dos números enteros positivos mayores que cero*/
+int a[M][N];
+```
+
+## Arreglo bidimensional{.smaller}
+
+Ejercicio: 
+
+1) Escribir un programa en C, que pida al usuario la dimension de una matriz de enteros la inicialice con valores aleatorios del 1 al 10 y  la imprima en consola.
+
+2) Escribir un programa en C que pida al usuario las dimensiones de dos matrices, 
+
+## Arreglo bidimensional{.smaller}
 
 ## 4 Ejercicio con arreglo unidimensional {.smaller}
 
@@ -303,15 +384,7 @@ Por ejemplo si 10 valores generados son a = [1,1,1,2,2,3,3,3,3,3]
 10:  
 
 
-## Arreglo bidimensional{.smaller}
 
-Ejercicio: 
-
-1) Escribir un programa en C, que pida al usuario la dimension de una matriz de enteros la inicialice con valores aleatorios del 1 al 10 y  la imprima en consola.
-
-2) Escribir un programa en C que pida al usuario las dimensiones de dos matrices, 
-
-## Arreglo bidimensional{.smaller}
 
 Ejercicio: Registro de temperaturas semanales
 
@@ -358,39 +431,7 @@ char s[] = "mecanica";
 
 Los arreglos de caracteres deben declararse lo suficientemente grande para contener las cadenas de caracteres.
 
-## Leyendo e imprimendo una cadena de caracteres en consola{.smaller}
 
-```{.c}
-
-#include<stdio.h>
-
-int main(){
-
-	char string[20];
-	scanf("%s", string);
-	printf("%s", string);
-
-}
-```
-
-## {.smaller}
-
-```{.c}
-#include<stdio.h>
-
-
-int main(){a
-    int i = 0;
-	  char string[20];
-	  scanf("%s", string);
-
-	  printf("Imprimendo caracter por caracter hasta el fin de la cadena\n");
-	  while(string[i]!='\0'){
-		    printf("%c ", string[i]);
-		    i = i + 1;
-	  }
-}
-```
 
 ## Ejercicio. Qué hace el siguiente programa?
 
@@ -428,14 +469,43 @@ int main() {
 }
 ```
 
-## Arreglos bidimensionales
 
-En C se declaran como
-```{.c}
-/*M y N son dos números enteros positivos mayores que cero*/
-int a[M][N];
-```
 
 ## Ejercicio arreglo bidimensional
 
 Escribir un programa en C que pida al usuario los valores de una matriz bidimensional M[3][3], tipo entero e imprima la matriz en consola.
+
+
+## Leyendo e imprimendo una cadena de caracteres en consola{.smaller}
+
+```{.c}
+
+#include<stdio.h>
+
+int main(){
+
+	char string[20];
+	scanf("%s", string);
+	printf("%s", string);
+
+}
+```
+
+## {.smaller}
+
+```{.c}
+#include<stdio.h>
+
+
+int main(){a
+    int i = 0;
+	  char string[20];
+	  scanf("%s", string);
+
+	  printf("Imprimendo caracter por caracter hasta el fin de la cadena\n");
+	  while(string[i]!='\0'){
+		    printf("%c ", string[i]);
+		    i = i + 1;
+	  }
+}
+```

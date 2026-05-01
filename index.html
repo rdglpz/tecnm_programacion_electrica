@@ -104,6 +104,7 @@ window.Quarto = {
   <li><a href="#parcial-1" id="toc-parcial-1" class="nav-link" data-scroll-target="#parcial-1"><span class="header-section-number">7.1</span> Parcial 1</a></li>
   <li><a href="#parcial-2" id="toc-parcial-2" class="nav-link" data-scroll-target="#parcial-2"><span class="header-section-number">7.2</span> Parcial 2</a></li>
   <li><a href="#parcial-3" id="toc-parcial-3" class="nav-link" data-scroll-target="#parcial-3"><span class="header-section-number">7.3</span> Parcial 3</a></li>
+  <li><a href="#parcial-3-1" id="toc-parcial-3-1" class="nav-link" data-scroll-target="#parcial-3-1"><span class="header-section-number">7.4</span> Parcial 3</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -133,7 +134,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">25 de abril de 2026</p>
+      <p class="date">30 de abril de 2026</p>
     </div>
   </div>
   
@@ -397,7 +398,7 @@ El factorial de 6! = 6*5*4*3*2*1 = 720
 </section>
 <section id="parcial-3" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="parcial-3"><span class="header-section-number">7.3</span> Parcial 3</h2>
-<p><strong>Tarea 8 [Mostrar el .c y transcrito en libreta con comentarios Para el martes 28 de abril]</strong></p>
+<p><strong>Tarea 8 [Mostrar el .c y transcrito en libreta con comentarios Para el martes 28 de abril -&gt; 8 de mayo]</strong></p>
 <p>Escribir un programa en C que genere un arreglo de <span class="math inline">\(n=10\)</span> números enteros aleatorios del 1 al 10 y mostrar su representación en gráfica de barras con renglones de asteriscos.</p>
 <p>Por ejemplo: Si el arreglo `<code>a[5]={0,4,3,5,1}</code>, imprimir su representación en grafica de barras:</p>
 <p>0:<br>
@@ -406,6 +407,36 @@ El factorial de 6! = 6*5*4*3*2*1 = 720
 3:*****<br>
 4:*</p>
 <hr>
+</section>
+<section id="parcial-3-1" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="parcial-3-1"><span class="header-section-number">7.4</span> Parcial 3</h2>
+<p><strong>Tarea 9 [Mostrar la ejecución del .c y transcrito en libreta con comentarios Para el 8 de mayo.]</strong></p>
+<p>Escribir un programa en C que ordene de manera ascendente un arreglo desordenado de 20 enteros positivos del 0 al 9 generados aleatoriamente con la funcion <code>rand()</code> con el algoritmo de ordenamiento por inserción (<code>insertion sort</code>).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif" class="img-fluid figure-img"></p>
+<figcaption>Animación del algoritmo insertion sort</figcaption>
+</figure>
+</div>
+<p>El programa debe de imprimir el arreglo inicializado aleatoriamente y mostrar la actualización del arreglo por cada iteración. 2 puntos extras para el examen si logran imprimir los guiones que indican el sub arreglo ordenado hasta el momento.</p>
+<pre><code>Arreglo a ordenar:  
+
+7 3 9 5 7 3 8
+
+        _
+Paso 0: 7 3 9 5 7 3 8
+        _ _
+Paso 1: 3 7 9 5 7 3 8
+       _ _ _
+Paso 2: 3 7 9 5 7 3 8
+        _ _ _ _
+Paso 3: 3 5 7 9 7 3 8
+        _ _ _ _ _
+Paso 4: 3 5 7 7 9 3 8   
+        _ _ _ _ _ _
+Paso 5: 3 3 5 7 7 9 8
+        _ _ _ _ _ _ _
+Paso 6: 3 3 5 7 7 9 8</code></pre>
 </section>
 </section>
 

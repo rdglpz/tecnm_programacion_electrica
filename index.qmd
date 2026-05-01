@@ -346,7 +346,7 @@ El factorial de 6! = 6*5*4*3*2*1 = 720
 
 ## Parcial 3
 
-**Tarea 8 [Mostrar el .c y transcrito en libreta con comentarios Para el martes 28 de abril]**
+**Tarea 8 [Mostrar el .c y transcrito en libreta con comentarios Para el martes 28 de abril -> 8 de mayo]**
 
 Escribir un programa en C que genere un arreglo de $n=10$ números enteros aleatorios del 1 al 10 y mostrar su representación en gráfica de barras con renglones de asteriscos.
 
@@ -359,3 +359,44 @@ Por ejemplo: Si el arreglo ```a[5]={0,4,3,5,1}``, imprimir su representación en
 4:*   
 
 ****
+
+
+## Parcial 3 
+
+**Tarea 9 [Mostrar la ejecución del .c y transcrito en libreta con comentarios Para el 8 de mayo.]**
+
+Escribir un programa en C que ordene de manera ascendente un arreglo desordenado de 20 enteros positivos del 0 al 9 generados aleatoriamente con la funcion ```rand()``` con el algoritmo de ordenamiento por inserción (```insertion sort```).
+
+
+
+![Animación del algoritmo insertion sort](https://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif)
+
+El programa debe de imprimir el arreglo inicializado aleatoriamente y mostrar la actualización del arreglo por cada iteración. 2 puntos extras para el examen si logran imprimir los guiones que indican el sub arreglo ordenado hasta el momento.
+
+```
+Arreglo a ordenar:  
+
+7 3 9 5 7 3 8
+
+        _
+Paso 0: 7 3 9 5 7 3 8
+        _ _
+Paso 1: 3 7 9 5 7 3 8
+       _ _ _
+Paso 2: 3 7 9 5 7 3 8
+        _ _ _ _
+Paso 3: 3 5 7 9 7 3 8
+        _ _ _ _ _
+Paso 4: 3 5 7 7 9 3 8   
+        _ _ _ _ _ _
+Paso 5: 3 3 5 7 7 9 8
+        _ _ _ _ _ _ _
+Paso 6: 3 3 5 7 7 9 8
+```
+
+
+
+
+
+
+

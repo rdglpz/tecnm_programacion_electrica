@@ -1,0 +1,283 @@
+---
+author: "Rodrigo López Farías"
+title: "TECNM QRO Programación Ing. Eléctrica 2026 Parte 5"
+format: 
+    revealjs:
+        mermaid:
+          theme: forest
+        theme: white
+        slide-number: true
+        fig-align: center
+        show-slide-number: print
+        center-title-slide: true
+        incremental: false
+        highlight-style: github
+        include-in-header:
+          text: |
+            <style>
+              .kw  { color: #0066cc; font-weight: bold; }
+              .var { color: #cc0000; }
+            </style>
+config:
+  flowchart:
+    htmlLabels: false
+  Reveal.initialize({ slideNumber: true });
+
+editor:
+  syncslides: false
+
+filters: [pseudocode]
+
+
+
+---
+
+
+
+# 5 Funciones $$y \leftarrow f(x)$$ 
+
+
+## 4.1 Funciones{.smaller}
+
+Los programas en C se construyen a partir de módulos llamados **funciones**. 
+
+Tienen la siguiente estructura.  Ejemplo.
+
+
+Función que recibe un argumento entero ```int``` y devuelve un valor tipo ```int```
+```{.c}
+
+int f(int x){
+    /*Esta función recibe un argumento tipo entero lo procesa y lo regresa*/
+    return x*x;
+
+}
+
+```
+
+Función que no recibe argumento  y tampoco devuelve un valor.
+
+```{.c}
+
+void g(){
+    /*Esta función no recibe ni regresa algún valor*/
+
+    /*Las variables declaradas dentro de una función son llamadas variables locales*/
+    int x = 1;
+    printf("Esta funcion hace un proceso interno");
+
+}
+
+```
+
+
+## 4.1 Ejemplo
+
+Programa que calcula el cuadrado de un entero con una función.2
+```{.c}
+
+#include<stdio.h>
+
+/*Prototipo de la función*/
+int f(int);
+
+/*Función principal*/
+int main(){
+    int x, y;
+    printf("Dame un valor entero para calcular su cuadrado: ");
+    scanf("%d", &x);
+    y = f(x);
+    printf("El cuadrado de %d es %d \n", x, y);
+    return 0;
+}
+
+/*Definición de la funcion*/
+int f(int x){
+    /*Esta función recibe un argumento tipo entero lo procesa y lo regresa*/
+    return x*x;
+
+
+```
+
+
+
+# Funciones
+
+- Las funciones permiten ser programadas una sola vez, y ser **reutilizadas** cualquier número de veces en el programa.
+-Incrementan la organización y legibilidad del código.
+- Podemos crear nuestras propias librerías de funciones.
+
+
+
+
+## 4.1 Declaración e invocación de funciones{.smaller}
+
+```{.c}
+#include<stdio.h>
+
+/*Prototipo de la función*/
+int f(int);
+
+int main(){
+    int x, y;
+    printf("Dame un valor entero para calcular su cuadrado: ");
+    scanf("%d", &x);
+    y = f(x);
+    printf("El cuadrado de %d es %d \n", x, y);
+    return 0;
+}
+
+int f(int x){
+    /*Esta función recibe un argumento tipo entero lo procesa y lo regresa*/
+    return x*x;
+}
+```
+
+
+# 4.1 Funciones de biblioteca estándard
+
+## Cabeceras más usadas según ChatGpt{.smaller}
+
+| Cabecera | % Uso | Descripción |
+|-----------|-------|--------------|
+| `<stdio.h>` | 90 % | Entrada/salida estándar |
+| `<string.h>` | 75 % | Manipulación de cadenas |
+| `<math.h>` | 30 % | Funciones matemáticas |
+| `<time.h>` | 20 % | Fecha y hora |
+| `<stdlib.h>` | 80 % | Gestión de memoria, utilidades generales |
+| `<stddef.h>` | 60 % | Tipos comunes (`size_t`, `ptrdiff_t`) |
+| `<stdint.h>` | 50 % | Enteros de tamaño fijo |
+| `<limits.h>` | 45 % | Límites de tipos enteros |
+| `<ctype.h>` | 40 % | Clasificación/conversión de caracteres |
+| `<errno.h>` | 25 % | Manejo de códigos de error |
+
+
+---
+
+## Cabeceras de uso frecuente{.smaller}
+
+| Cabecera | % Uso | Descripción |
+|-----------|-------|--------------|
+| `<signal.h>` | 20 % | Manejo de señales |
+| `<stdarg.h>` | 15 % | Argumentos variables |
+| `<assert.h>` | 12 % | Aserciones de depuración |
+| `<stdbool.h>` | 8 % | Tipo booleano (`true`/`false`) |
+| `<inttypes.h>` | 5 % | Formatos para `intN_t` |
+| `<tgmath.h>` | 5 % | Funciones matemáticas genéricas |
+| `<wchar.h>` | 10 % | Cadenas de caracteres anchos |
+| `<wctype.h>` | 8 % | Clasificación de caracteres anchos |
+| `<locale.h>` | 2 % | Localización regional |
+| `<iso646.h>` | 1 % | Operadores alternativos (`and`, `or`) |
+
+---
+
+## Cabeceras especializadas{.smaller}
+
+| Cabecera | % Uso | Descripción |
+|-----------|-------|--------------|
+| `<complex.h>` | 3 % | Números complejos |
+| `<fenv.h>` | 2 % | Entorno de coma flotante |
+| `<setjmp.h>` | 1 % | Saltos no locales |
+| `<uchar.h>` | 1 % | Soporte para `char16_t` y `char32_t` |
+| `<errno.h>` | 25 % | Errores del sistema |
+| `<signal.h>` | 20 % | Señales del sistema |
+| `<stdarg.h>` | 15 % | Argumentos variables |
+| `<assert.h>` | 12 % | Aserciones de depuración |
+
+---
+
+## Cabeceras modernas (C11–C23)
+
+| Cabecera | % Uso | Descripción |
+|-----------|-------|--------------|
+| `<stdalign.h>` | 1 % | Alineación de tipos (C11) |
+| `<stdatomic.h>` | 1 % | Operaciones atómicas (C11) |
+| `<threads.h>` | 1 % | Hilos nativos (C11) |
+| `<stdnoreturn.h>` | 1 % | Funciones sin retorno (C11) |
+| `<stdbit.h>` | 1 % | Manipulación de bits (C23) |
+| `<stdckdint.h>` | 1 % | Enteros con verificación de overflow (C23) |
+| `<stdmchar.h>` | 1 % | Transcodificación multibyte (C23) |
+
+---
+
+## Notas finales
+
+- Estos porcentajes son **estimaciones** basadas en análisis de código abierto y uso práctico.  
+- Prioriza siempre la **portabilidad** usando `<stdint.h>` y `<inttypes.h>`.  
+- Las cabeceras de C11/C23 requieren **compiladores modernos** (GCC ≥ 5, Clang ≥ 3.5).  
+- Para proyectos nuevos, evita cabeceras obsoletas o dependientes de la implementación.
+
+---
+
+## Ejemplo funciones de librerías estandard{.smaller}
+
+```{.c}
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(){
+    int c, r;
+    unsigned semilla = 1;
+    
+    while(semilla!=0){
+    	printf("Dame un número semilla:");
+    	scanf("%u", &semilla);
+    	srand(semilla);
+    	printf("Semilla %u genera tiradas:", semilla);
+    	c = 0;
+
+    	while(c<10){
+    	    r = rand();
+    	    r = r%6+1;
+    	    printf("%u ", r);
+    	    c=c+1;
+    	}
+    	printf("\n Teclea una semilla diferente de 0 para continuar \n");
+    	scanf("%u", &semilla);   	
+    }
+}
+```
+
+##  Ejemplo funciones de librerías estandard {.smaller}
+
+Generando números pseudoaleatorios utilizando el reloj de la computadora.
+
+```{.c}
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
+
+
+int main(){
+  
+  /*tomamos los segundos del procesador desde Enero 1 de 1970*/
+  unsigned int semilla = time(0);
+  printf("Segundos desde Enero 1 de 1970: = %d \n", semilla);
+  srand(semilla);
+  printf("Numero entero pseudo aleatorio del 1 al 10: %d \n", rand()%10+1);
+  return 0;
+}
+```
+
+
+## Ejercicio {.smaller}
+
+Juego simple con números aleatorios: Escribir un programa donde la computadora selecciones un entero al azar del 1 al 100 y el usuario intente adivinarlo con un número indefinido de oportunidades.
+
+```
+Adivina número.
+
+Intenta adivinar que número tengo escondido, dame un número entre 1 al 10.: 5
+El número es mayor
+
+Intenta adivinar que número tengo escondido, dame un número entre 1 al 10.: 10
+El número es menor
+
+Intenta adivinar que número tengo escondido, dame un número entre 1 al 10.: 9
+Haz encontrado el número con 3 intententos. 
+Presiona cualquier tecla para continuar.
+
+
+```
+

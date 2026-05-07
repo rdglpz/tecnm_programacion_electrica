@@ -71,6 +71,8 @@ format:
 
 # Funciones
 
+* [Diapositivas U5](U5.html)
+
 # Uso de puertos de comunicación
 
 
@@ -369,7 +371,7 @@ Escribir un programa en C que ordene de manera ascendente un arreglo desordenado
 
 
 
-![Animación del algoritmo insertion sort](https://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif)
+![Animación del algoritmo insertion sort tomado de la Wikipedia](https://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif)
 
 El programa debe de imprimir el arreglo inicializado aleatoriamente y mostrar la actualización del arreglo por cada iteración. 2 puntos extras para el examen si logran imprimir los guiones que indican el sub arreglo ordenado hasta el momento.
 

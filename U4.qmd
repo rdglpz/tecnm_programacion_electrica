@@ -509,3 +509,183 @@ int main(){a
 	  }
 }
 ```
+
+## Ejercicio {.smaller}
+
+### Llenar e imprimir una matriz
+
+Escribir un programa en C que solicite al usuario ingresar los
+elementos de una matriz de **3×3** elemento por elemento,
+y luego la imprima en formato de tabla.
+
+**Ejemplo de ejecución:**
+
+```
+Ingrese elemento [0][0]: 1
+Ingrese elemento [0][1]: 2
+Ingrese elemento [0][2]: 3
+Ingrese elemento [1][0]: 4
+Ingrese elemento [1][1]: 5
+Ingrese elemento [1][2]: 6
+Ingrese elemento [2][0]: 7
+Ingrese elemento [2][1]: 8
+Ingrese elemento [2][2]: 9
+
+Matriz ingresada:
+  1   2   3
+  4   5   6
+  7   8   9
+```
+
+::: {.callout-tip}
+**Tip:** doble ciclo `while` — el índice `i` recorre filas, `j` recorre columnas.
+:::
+
+---
+
+## Ejercicio {.smaller}
+
+### Suma de todos los elementos
+
+Escribir un programa en C que, dada una matriz de **4×4** con valores
+enteros definidos por el usuario, calcule e imprima la suma total
+de todos sus elementos.
+
+**Ejemplo de ejecución:**
+
+```
+Ingrese la matriz 4x4:
+Fila 0: 1 2 3 4
+Fila 1: 5 6 7 8
+Fila 2: 9 10 11 12
+Fila 3: 13 14 15 16
+
+La suma total de todos los elementos es: 136
+```
+
+
+
+---
+
+## Ejercicio {.smaller}
+
+### Buscar el máximo y su posición
+
+Escribir un programa en C que recorra una matriz de **3×4** ingresada
+por el usuario y reporte el valor máximo encontrado junto con su
+posición **(fila, columna)**.
+
+**Ejemplo de ejecución:**
+
+```
+Ingrese la matriz 3x4:
+Fila 0:  5  12   3  18
+Fila 1:  7   2  45   6
+Fila 2: 33   1   9  22
+
+El valor máximo es: 45
+Se encuentra en la posición: fila 1, columna 2
+```
+
+::: {.callout-tip}
+**Tip:** además del acumulador, guardar las variables `fila_max` y `col_max`
+cuando se encuentre un nuevo máximo.
+:::
+
+---
+
+## Ejercicio {.smaller}
+
+### Suma por filas y por columnas
+
+Escribir un programa en C que, para una matriz de **3×3** ingresada
+por el usuario, calcule e imprima la suma de cada fila y la suma
+de cada columna por separado.
+
+**Ejemplo de ejecución:**
+
+```
+Ingrese la matriz 3x3:
+Fila 0: 1 2 3
+Fila 1: 4 5 6
+Fila 2: 7 8 9
+
+Suma de filas:
+  Fila 0: 6
+  Fila 1: 15
+  Fila 2: 24
+
+Suma de columnas:
+  Columna 0: 12
+  Columna 1: 15
+  Columna 2: 18
+```
+
+::: {.callout-tip}
+**Tip:** para sumar la fila `i`, fijar `i` y recorrer `j`. Para la columna `j`,
+fijar `j` y recorrer `i`.
+:::
+
+---
+
+## Ejercicio {.smaller}
+
+### Patrón de tablero de ajedrez
+
+Escribir un programa en C que genere e imprima una matriz de **5×5**
+con patrón de tablero de ajedrez: las celdas donde la suma de sus
+índices es par contienen **0**, y donde es impar contienen **1**
+*(sin usar* `if`*)*.
+
+**Ejemplo de ejecución:**
+
+```
+Tablero de ajedrez 5x5:
+  0   1   0   1   0
+  1   0   1   0   1
+  0   1   0   1   0
+  1   0   1   0   1
+  0   1   0   1   0
+```
+
+::: {.callout-tip}
+**Ayuda:** `mat[i][j] = (i + j) % 2;` — la condición sobre los índices
+genera el contenido sin necesitar `if`.
+:::
+
+---
+
+## Ejercicio {.smaller}
+
+### Transponer la matriz
+
+Escribir un programa en C que lea una matriz de **3×4**, obtenga
+su transpuesta (una matriz de **4×3**) e imprima ambas matrices
+para comparar el resultado.
+
+**Ejemplo de ejecución:**
+
+```
+Ingrese la matriz 3x4:
+Fila 0:  1  2  3  4
+Fila 1:  5  6  7  8
+Fila 2:  9 10 11 12
+
+Matriz original (3x4):
+  1   2   3   4
+  5   6   7   8
+  9  10  11  12
+
+Matriz transpuesta (4x3):
+  1   5   9
+  2   6  10
+  3   7  11
+  4   8  12
+```
+
+::: {.callout-tip}
+**Operación:** `transpuesta[j][i] = original[i][j]` — se intercambian los roles
+de los índices.
+:::
+
+---

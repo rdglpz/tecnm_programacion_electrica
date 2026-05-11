@@ -105,6 +105,7 @@ window.Quarto = {
   <li><a href="#parcial-2" id="toc-parcial-2" class="nav-link" data-scroll-target="#parcial-2"><span class="header-section-number">7.2</span> Parcial 2</a></li>
   <li><a href="#parcial-3" id="toc-parcial-3" class="nav-link" data-scroll-target="#parcial-3"><span class="header-section-number">7.3</span> Parcial 3</a></li>
   <li><a href="#parcial-3-1" id="toc-parcial-3-1" class="nav-link" data-scroll-target="#parcial-3-1"><span class="header-section-number">7.4</span> Parcial 3</a></li>
+  <li><a href="#tarea-10-programar-la-criba-de-eratostenes-en-consola-para-la-búsqueda-de-números-primos." id="toc-tarea-10-programar-la-criba-de-eratostenes-en-consola-para-la-búsqueda-de-números-primos." class="nav-link" data-scroll-target="#tarea-10-programar-la-criba-de-eratostenes-en-consola-para-la-búsqueda-de-números-primos."><span class="header-section-number">7.5</span> Tarea 10: programar la criba de Eratostenes en consola para la búsqueda de números primos.</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -134,7 +135,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">7 de mayo de 2026</p>
+      <p class="date">11 de mayo de 2026</p>
     </div>
   </div>
   
@@ -440,6 +441,34 @@ Paso 4: 3 5 7 7 9 3 8
 Paso 5: 3 3 5 7 7 9 8
         _ _ _ _ _ _ _
 Paso 6: 3 3 5 7 7 8 9</code></pre>
+</section>
+<section id="tarea-10-programar-la-criba-de-eratostenes-en-consola-para-la-búsqueda-de-números-primos." class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="tarea-10-programar-la-criba-de-eratostenes-en-consola-para-la-búsqueda-de-números-primos."><span class="header-section-number">7.5</span> Tarea 10: programar la criba de Eratostenes en consola para la búsqueda de números primos.</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figuras/Sieve_of_Eratosthenes_animation.gif" class="img-fluid figure-img"></p>
+<figcaption>Busqueda binaria</figcaption>
+</figure>
+</div>
+<p>Escribir un programa en C, que calcule los números primos con la criba de Eratóstenes. El tamaño de la criba es definido por un número entero positivo dado por el usuario y debe ser mostrada en una matriz cuadrada o rectangular.</p>
+<p>Por ejemplo:</p>
+<pre><code>Dame el tamaño de la criba: 25
+
+Estado inicial:
+ 1   2   3   4   5
+ 6   7   8   9  10
+11  12  13  14  15
+16  17  18  19  20
+21  22  23  24  25
+
+Estado final:
+-1   2   3  -1   5
+-1   7  -1  -1  -1
+11  -1  13  -1  -1
+-1  17  -1  19  -1
+-1  -1  23  -1  -1
+
+Los números primos son: 2,3,5,7,11,13,17,19,23</code></pre>
 </section>
 </section>
 

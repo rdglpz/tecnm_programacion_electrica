@@ -397,6 +397,35 @@ Paso 6: 3 3 5 7 7 8 9
 ```
 
 
+## Tarea 10: programar la criba de Eratostenes en consola para la búsqueda de números primos.
+
+![Busqueda binaria](figuras/Sieve_of_Eratosthenes_animation.gif)
+
+Escribir un programa en C, que calcule los números primos con la criba de Eratóstenes. El tamaño de la criba es definido por un número entero positivo dado por el usuario y debe ser mostrada en una matriz cuadrada o rectangular.
+
+Por ejemplo:
+
+```
+Dame el tamaño de la criba: 25
+
+Estado inicial:
+ 1   2   3   4   5
+ 6   7   8   9  10
+11  12  13  14  15
+16  17  18  19  20
+21  22  23  24  25
+
+Estado final:
+-1   2   3  -1   5
+-1   7  -1  -1  -1
+11  -1  13  -1  -1
+-1  17  -1  19  -1
+-1  -1  23  -1  -1
+
+Los números primos son: 2,3,5,7,11,13,17,19,23
+```
+
+
 
 
 

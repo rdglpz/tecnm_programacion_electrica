@@ -491,16 +491,19 @@ El codigo de ayuda para mostrar un arreglo es el siguiente
 ```{c}
 
 #include <stdio.h>
+#include <stdlib.h>
 
 /* Definición de la función que muestra el arreglo*/
-void mostrar_arreglo(unsigned arr[], int tam) {
+void mostrar_arreglo(unsigned arr[], unsigned tam) {
     printf("Elementos del arreglo: ");
     int i = 0;
+    printf("[");
     while(i < tam){
         printf("%d ", arr[i]); /* Imprime cada elemento*/
-        i + i+1;
+        i = i + 1;
     }
-    printf("\n");
+    printf("] \n");
+    
 }
 
 void ordenar(unsigned arr[], unsigned tam){
@@ -514,24 +517,24 @@ void desordenar(unsigned arr[], unsigned tam){
 int main() {
     unsigned arreglo[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-    /* Calcula el tamaño del arreglo */
-    unsigned n = sizeof(arreglo) / sizeof(miArreglo[0]); 
+    /* Calcula el numero de elementos en el arreglo */
+    unsigned n = sizeof(arreglo) / sizeof(arreglo[0]); 
 
     /* Llamada a la función */
     printf("Mostrar arreglo inicial \n");
-    mostrarArreglo(arreglo, n);
+    mostrar_arreglo(arreglo, n);
 
     printf("Desordenando arreglo \n");
     desordenar(arreglo, n);
 
     printf("Mostrar arreglo desordenado \n");
-    mostrarArreglo(arreglo, n);
+    mostrar_arreglo(arreglo, n);
 
     printf("Odenando arreglo de nuevo\n");
     ordenar(arreglo, n);
 
     printf("Mostrar arreglo ordenado \n");
-    mostrarArreglo(arreglo, n);
+    mostrar_arreglo(arreglo, n);
 
     return 0;
 }
@@ -549,20 +552,15 @@ void desordenar(unsigned a[], int n);
 ```
 
 
-La salida del programa debe ser algo así:
-
+**Salida esperada** (La salida es variable según la semilla que se utilice)
 
 ```
-Mostrar arreglo inicial
-[ 1 2 3 4 5 6 7 8 9 10 ]
-
-Desordenando arreglo
-
-Mostrar arreglo desordenado
-[ 3 7 1 9 5 10 2 8 4 6 ]
-
-Ordenando arreglo de nuevo
-
-Mostrar arreglo ordenado
-[ 1 2 3 4 5 6 7 8 9 10 ]
+Mostrar arreglo inicial 
+Elementos del arreglo: [1 2 3 4 5 6 7 8 9 10 ]
+Desordenando arreglo 
+Mostrar arreglo desordenado 
+Elementos del arreglo: [1 2 3 4 5 6 7 8 9 10 ]
+Odenando arreglo de nuevo
+Mostrar arreglo ordenado 
+Elementos del arreglo: [1 2 3 4 5 6 7 8 9 10 ]
 ```

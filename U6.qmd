@@ -1,0 +1,97 @@
+---
+author: "Rodrigo López Farías"
+title: "TECNM QRO Programación Ing. Eléctrica 2026 Parte 6"
+format: 
+    revealjs:
+        mermaid:
+          theme: forest
+        theme: white
+        slide-number: true
+        fig-align: center
+        show-slide-number: print
+        center-title-slide: true
+        incremental: false
+        highlight-style: github
+        include-in-header:
+          text: |
+            <style>
+              .kw  { color: #0066cc; font-weight: bold; }
+              .var { color: #cc0000; }
+            </style>
+config:
+  flowchart:
+    htmlLabels: false
+  Reveal.initialize({ slideNumber: true });
+
+editor:
+  syncslides: false
+
+filters: [pseudocode]
+
+
+
+---
+
+
+
+# 6 Puertos de comunicación.
+
+
+## Arduino
+
+Arduino es una plataforma de electrónica abierta (open-source) y amigable que incluye hardware y software.
+
+![Arduino Uno](../figuras/arduino_hw.png)
+
+
+## Arduino
+
+Arduino es una plataforma de electrónica abierta (open-source) y amigable que incluye hardware y software.
+
+https://www.luisllamas.es/que-es-arduino-que-modelo-comprar/
+
+
+![Arduino IDE](../figuras/arduino_sw.png)
+
+
+## Arduino 
+
+![Arduino IDE](../figuras/arduino.png)
+
+
+## Arduino se programa en C
+
+
+```{.c}
+void setup() {
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+}
+```
+
+
+## Programa sencillo para Probar Arduino.
+
+
+```{.c}
+
+// the setup function runs once when you press reset or power the board
+void setup() {
+  // initialize digital pin LED_BUILTIN as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+// the loop function runs over and over again forever
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(1000);                       // wait for a second
+  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+  delay(1000);                       // wait for a second
+}
+```
+

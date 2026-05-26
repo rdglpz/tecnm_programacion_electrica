@@ -76,6 +76,8 @@ format:
 # Uso de puertos de comunicación
 
 
+* [Diapositivas U5](U6.html)
+
 # Tareas 
  
 ## Parcial 1
@@ -488,7 +490,7 @@ A partir del siguiente codigo:
 
 El codigo de ayuda para mostrar un arreglo es el siguiente 
 
-```{c}
+```{.c}
 
 #include <stdio.h>
 #include <stdlib.h>

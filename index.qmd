@@ -76,7 +76,7 @@ format:
 # Uso de puertos de comunicación
 
 
-* [Diapositivas U5](U6.html)
+* [Diapositivas U6](U6.html)
 
 # Tareas 
  
@@ -484,7 +484,7 @@ Paso 7: 2 5 1 6 0 4 3
 
 ## Tarea 12. 
 
-Entrega 25 de Mayo 2026.
+Entrega 29 de Mayo 2026.
 
 A partir del siguiente codigo:
 
@@ -566,3 +566,16 @@ Odenando arreglo de nuevo
 Mostrar arreglo ordenado 
 Elementos del arreglo: [1 2 3 4 5 6 7 8 9 10 ]
 ```
+
+
+## Tarea
+
+* Descargar El . zip file (por ejemplo el arduino-ide_2.3.9_Windows_64bit.zip) para su Sistema Operativo desde https://www.arduino.cc/en/software/
+* Descomprimir el folder y ejecutar Arduino IDE.exe IDE 
+* Instalar Simulide https://simulide.com/p/
+* Configurar el compilador de Arduino en Simulide (Aqui da una pequeña guia https://youtu.be/iplI-QAXusw?list=PLHeSkBngHNeopp6WLW_QidmXIbSZQd0P7&t=886)
+* Ejecutar el programa Blink en simulide en un Arduino.
+
+
+
+Configurar el com

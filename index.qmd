@@ -568,11 +568,11 @@ Elementos del arreglo: [1 2 3 4 5 6 7 8 9 10 ]
 ```
 
 
-## Tarea
+## Instrucciones para instalar Arduino IDE + SIMULIDE en Windows
 
 * Descargar El . zip file (por ejemplo el arduino-ide_2.3.9_Windows_64bit.zip) para su Sistema Operativo desde https://www.arduino.cc/en/software/
 * Descomprimir el folder y ejecutar Arduino IDE.exe IDE 
-* Instalar Simulide https://simulide.com/p/
+* Instalar Simulide https://simulide.com/p/ la versión estable
 * Configurar el compilador de Arduino en Simulide (Aqui da una pequeña guia https://youtu.be/iplI-QAXusw?list=PLHeSkBngHNeopp6WLW_QidmXIbSZQd0P7&t=886)
 * Ejecutar el programa Blink en simulide en un Arduino.
 

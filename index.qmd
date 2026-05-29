@@ -77,6 +77,7 @@ format:
 
 
 * [Diapositivas U6](U6.html)
+* [Proyecos Arduino en SimulIDE](/software/proyectos%20de%20prueba%20arduino%20simulide.zip)
 
 # Tareas 
  
@@ -575,5 +576,9 @@ Elementos del arreglo: [1 2 3 4 5 6 7 8 9 10 ]
 * Instalar Simulide https://simulide.com/p/ la versión estable
 * Configurar el compilador de Arduino en Simulide (Aqui da una pequeña guia https://youtu.be/iplI-QAXusw?list=PLHeSkBngHNeopp6WLW_QidmXIbSZQd0P7&t=886)
 * Ejecutar el programa Blink en simulide en un Arduino.
+
+## Últimos proyectos vistos en clase
+
+
 
 

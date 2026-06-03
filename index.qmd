@@ -36,6 +36,19 @@ format:
         </div>
 ---
 
+## ANUNCIO!
+
+[Sus calificaciones las subiré en breve al SII en cuanto resuelva un problema técnico.  ]{style="color: red;"}
+
+
+[Nos vemos el viernes 5 de Junio a las 7:00 am para las segundas.]{style="color: red;"}
+
+
+
+
+
+
+
 
 
 ## Presentación de la Clase
